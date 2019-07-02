@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Điểm Trung Bình + Tổng</title>
+</head>
+<body>
+    <script>
+        let D_Vatly=prompt("Nhập điểm môn Vật lý của HS",)
+        let D_Hoahoc=prompt("Nhập điểm môn Hóa học của HS",)
+        let D_Sinhhoc=prompt("Nhập điểm môn Sinh học của HS",)
+        Vatly=parseInt(D_Vatly)
+        Hoahoc=parseInt(D_Hoahoc)
+        Sinhoc=parseInt(D_Sinhhoc)
+        DTB=(Hoahoc+Vatly+Sinhoc)/3
+        Sum=Hoahoc+Sinhoc+Vatly
+        document.write('Tổng điểm các môn là:' + Sum)
+        document.write('</br>')
+        document.write('Điểm Trung Bình là:' + DTB)
+        
+        
+    </script>
+</body>
+</html>
