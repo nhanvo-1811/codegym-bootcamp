@@ -11,11 +11,11 @@
         let D_Vatly=prompt("Nhập điểm môn Vật lý của HS",)
         let D_Hoahoc=prompt("Nhập điểm môn Hóa học của HS",)
         let D_Sinhhoc=prompt("Nhập điểm môn Sinh học của HS",)
-        Vatly=parseInt(D_Vatly)
-        Hoahoc=parseInt(D_Hoahoc)
-        Sinhoc=parseInt(D_Sinhhoc)
-        DTB=(Hoahoc+Vatly+Sinhoc)/3
-        Sum=Hoahoc+Sinhoc+Vatly
+        let Vatly=parseInt(D_Vatly)
+        let Hoahoc=parseInt(D_Hoahoc)
+        let Sinhoc=parseInt(D_Sinhhoc)
+        let DTB=(Hoahoc+Vatly+Sinhoc)/3
+        let Sum=Hoahoc+Sinhoc+Vatly
         document.write('Tổng điểm các môn là:' + Sum)
         document.write('</br>')
         document.write('Điểm Trung Bình là:' + Math.round(DTB*10)/10)
