@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Currency</title>
+</head>
+<body>
+    
+    <table style="width:50%">
+        <tr>
+            <th>Amount</th>            
+            <th>From Currency</th>
+            <th>To Currency</th>
+        </tr>
+        <tr>
+            <td>
+                <center>
+                    <input id='Amount'type="number" value="1" min="0">
+                </center>
+            </td>
+            <td>
+                <center>
+                    <select id="from" style="width:70%">
+                        <option value="VND">VND</option>
+                        <option value="USD">USD</option>
+                        <option value="Euro">Euro</option>
+                    </select>
+                </center>
+            </td>
+            <td>
+                <center>
+                    <select id="to" style="width:90%">
+                            <option value="VND">VND</option>
+                            <option value="USD">USD</option>
+                            <option value="Euro">Euro</option>
+                    </select>
+                </center>
+            </td>
+            <td>
+                <button type="button" onclick="Convert()">Convert</button>              
+            </td>
+        </tr>
+    </table>
+    <h2 id=Result></h2>
+    <script>
+
+        function Convert()
+        {   let from=document.getElementById("from").value;
+            let to=document.getElementById("to").value;
+            let Amount=document.getElementById("Amount").value
+             if (Amount<0)
+            {
+               alert('Giá trị nhập phải lớn hơn hoặc bằng 0')
+               document.getElementById('Result').innerHTML= 'Mời nhập lại'
+               
+            }
+            else{
+            if (from == to)
+            {
+                document.getElementById('Result').innerHTML= 'Result Addition: ' + Math.round(Amount*100)/100
+            }
+            if (from =='VND'&& to== 'USD')
+            {
+                Amount=Amount/23000
+                document.getElementById('Result').innerHTML= 'Result Addition: ' + Math.round(Amount*100)/100
+            }
+            if (from =='VND'&& to== 'Euro')
+            {
+                Amount=Amount/26000
+                document.getElementById('Result').innerHTML= 'Result Addition: ' + Math.round(Amount*100)/100
+            }
+            if (from =='USD'&& to== 'Euro')
+            {
+                Amount=Amount*0.88
+                document.getElementById('Result').innerHTML= 'Result Addition: ' + Math.round(Amount*100)/100
+            }
+            if (from =='USD'&& to== 'VND')
+            {
+                Amount=Amount*230000
+                document.getElementById('Result').innerHTML= 'Result Addition: ' + Math.round(Amount*100)/100
+            }
+            if (from =='Euro'&& to== 'VND')
+            {
+                Amount=Amount*26000
+                document.getElementById('Result').innerHTML= 'Result Addition: ' + Math.round(Amount*100)/100
+            }
+            if (from =='Euro'&& to== 'USD')
+            {
+                Amount=Amount*1.13
+                document.getElementById('Result').innerHTML= 'Result Addition: ' + Math.round(Amount*100)/100
+            }
+            }
+            
+        }
+    </script>
+</body>
+</html>
