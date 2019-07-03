@@ -9,8 +9,13 @@
 <body>
     <script>
         const pi=3.14;
-        let d=prompt('Nhập đường kính');
+        let d=+prompt('Nhập đường kính');
         let C_vi=d*pi;
+        while(d<0)
+        {
+            alert("Số điểm phải lớn hơn 0");
+            let d=+prompt('Nhập bán kính')
+        }
         document.write('Chu vi hình tròn: ' + Math.round(C_vi * 100) / 100);
     </script>
 </body>

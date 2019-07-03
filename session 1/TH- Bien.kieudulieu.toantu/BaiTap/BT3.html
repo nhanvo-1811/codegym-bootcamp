@@ -8,10 +8,15 @@
 </head>
 <body>
     <script>
-        const pi=3.14
-        let r=prompt('Nhập bán kính')
-        let s=pi*r**2
-        document.write('Diện tích hình tròn: ' + s)
+        const pi=3.14;
+        let r=+prompt('Nhập bán kính');
+        let s=pi*r**2;
+        while(r<0)
+        {
+            alert("Số điểm phải lớn hơn 0");
+            let r=+prompt('Nhập bán kính')
+        }
+        document.write('Diện tích hình tròn: ' + s);
     </script>
 </body>
 </html>

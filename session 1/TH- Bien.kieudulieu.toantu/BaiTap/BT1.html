@@ -7,25 +7,28 @@
     <title>Điểm Trung Bình + Tổng</title>
 </head>
 <body>
+    <h2 id="demo"></h2>
     <script>
-        let D_Vatly=prompt("Nhập điểm môn Vật lý của HS",)
-        let D_Hoahoc=prompt("Nhập điểm môn Hóa học của HS",)
-        let D_Sinhhoc=prompt("Nhập điểm môn Sinh học của HS",)
-        let Vatly=parseInt(D_Vatly)
-        let Hoahoc=parseInt(D_Hoahoc)
-        let Sinhoc=parseInt(D_Sinhhoc)
-        let DTB=(Hoahoc+Vatly+Sinhoc)/3
-        let Sum=Hoahoc+Sinhoc+Vatly
-        if( Vatly<0 ||Hoahoc<0||Sinhoc<0){
-            alert("Số điểm phải lớn hơn 0")
-            document.write("Yêu cầu nhập lại")
+        let D_Vatly=prompt("Nhập điểm môn Vật lý của HS");
+        let D_Hoahoc=prompt("Nhập điểm môn Hóa học của HS");
+        let D_Sinhhoc=prompt("Nhập điểm môn Sinh học của HS");
+        let Vatly=parseInt(D_Vatly);
+        let Hoahoc=parseInt(D_Hoahoc);
+        let Sinhoc=parseInt(D_Sinhhoc);
+        let DTB=(Hoahoc+Vatly+Sinhoc)/3;
+        let Sum=Hoahoc+Sinhoc+Vatly;
+        while ( Vatly<0 ||Hoahoc<0||Sinhoc<0)
+            {
+                alert("Số điểm phải lớn hơn 0");
+                Vatly = +prompt("Nhập điểm môn Vật lý của HS",);
+                Hoahoc = +prompt("Nhập điểm môn Hóa học của HS",);
+                Sinhoc = +prompt("Nhập điểm môn Sinh học của HS",);
+            }
             
-        }
-        else{
-        document.write('Tổng điểm các môn là:' + Sum)
-        document.write('</br>')
-        document.write('Điểm Trung Bình là:' + Math.round(DTB*10)/10)
-        }
+        document.write('Tổng điểm các môn là:' + Sum);
+        document.write('</br>');
+        document.write('Điểm Trung Bình là:' + Math.round(DTB*10)/10);
+        
         
     </script>
 </body>
