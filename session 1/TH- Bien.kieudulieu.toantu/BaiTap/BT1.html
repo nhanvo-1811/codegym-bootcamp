@@ -16,10 +16,16 @@
         let Sinhoc=parseInt(D_Sinhhoc)
         let DTB=(Hoahoc+Vatly+Sinhoc)/3
         let Sum=Hoahoc+Sinhoc+Vatly
+        if( Vatly<0 ||Hoahoc<0||Sinhoc<0){
+            alert("Số điểm phải lớn hơn 0")
+            document.write("Yêu cầu nhập lại")
+            
+        }
+        else{
         document.write('Tổng điểm các môn là:' + Sum)
         document.write('</br>')
         document.write('Điểm Trung Bình là:' + Math.round(DTB*10)/10)
-        
+        }
         
     </script>
 </body>
