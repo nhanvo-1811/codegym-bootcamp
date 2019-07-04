@@ -9,14 +9,17 @@
 <body>
     <script>
         let nam = + prompt("Nhập Số Năm");
-    if(nam % 100 == 0){
-        if(nam % 400 == 0) alert("năm nhập vào năm nhuận");
+        let nam100 = nam % 100 == 0;
+        let nam400 = nam % 400 == 0;
+        let nam4 = nam % 4 == 0;
+    if(nam100){
+        if(nam400) alert("năm nhập vào năm nhuận");
         else{
             alert("năm nhập vào không phải năm  nhuận");
         }
     }
     else{
-       if (nam % 4 == 0) alert("năm nhập vào năm nhuận");
+       if (nam4) alert("năm nhập vào năm nhuận");
        else{
             alert("năm nhập vào không phải năm  nhuận");
             }

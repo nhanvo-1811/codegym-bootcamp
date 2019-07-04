@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<h2 id="result"></h2>
+    <script>
+        let user = prompt("Tên đăng nhập");
+        let pass;
+        if(user == "admin")
+        {
+            pass = prompt("Nhập mật khẩu");
+            if(pass == 'TheMaster' )
+            {
+                document.getElementById("result").innerHTML="Welcome"
+            }
+            if(pass == null)
+            {
+                document.getElementById("result").innerHTML="Canceled"
+            }
+            else{
+                    if(user == null)
+            {
+                document.getElementById("result").innerHTML="Canceled"
+            }
+            else
+            {
+                document.getElementById("result").innerHTML="I don’t know you"
+            }
+        }}
+        
+
+    </script>
+</body>
+</html>
