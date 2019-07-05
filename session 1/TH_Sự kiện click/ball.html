@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+    <img id = 'bong' src = "football.jpg" height = "400" width = "400" />
+    <h2>Click button below to move the image to right</h2>
+    <input type="button" value="Click Me" onclick="moveRight()" />
+    <script>
+        let imga = null
+        
+        function init() {
+            imga = document.getElementById('bong');
+            imga.style.position = 'relative';
+            imga.style.left = '0px';
+        }
+        
+        function moveRight(){
+            imga.style.left = parseInt(imga.style.left) + 10 + 'px';
+            
+        }
+
+       window.onload = init;
+        
+    </script>
+</body>
+</html>
