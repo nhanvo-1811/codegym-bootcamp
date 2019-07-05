@@ -19,22 +19,23 @@
             if(pass == 'TheMaster' )
             {
                 document.getElementById("result").innerHTML="Welcome"
-            }
-            else if(pass == null || pass=="")
-                    {  //alert("sadsad")
-                        document.getElementById("result").innerHTML="Cancel"
-                    }
-            
-        }
-        else if(user == null || pass=="")
-                {//alert("cancel")
-                document.getElementById("result").innerHTML="Cancel"
-                }
-                    else
+            }else  
+                if(pass == null || pass == "")
                 {
-                document.getElementById("result").innerHTML="I don’t know you"
+                document.getElementById("result").innerHTML="Cancel"
+                }else 
+                    {
+                    document.getElementById("result").innerHTML="Wrong password"
+                    }
+   
+        }
+          else if (user == null || user == "")
+                {
+                document.getElementById("result").innerHTML="Cancel";
                 }
+                else {document.getElementById("result").innerHTML="I don’t know you";
             
+          }
         
 
     </script>
