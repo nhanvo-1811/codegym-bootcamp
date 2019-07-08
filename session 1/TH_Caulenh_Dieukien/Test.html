@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Javascript Example</title>
+    </head>
+    <body>
+        <h2>Tạo checkbox checked bằng javascript</h2>
+        <p>Hướng dẫn tạo ô checkbox checked bằng Javascript</p>
+
+            <h4>Bạn là fanpage của freetuts.net phải không? chọn nếu phải và không chọn nếu không phải.</h4>
+            <input type="checkbox" value="0" id="checkbox1" /> Vâng, đúng rồi
+            
+        <br/>
+        <br/>
+        <br/>
+        <input type="button" id="btn1" value="Chọn"/>
+        <input type="button" id="btn2" value="Bỏ chọn"/>
+
+        <script language="javascript">
+
+            document.getElementById("btn1").onclick = function () {
+                let chon = document.getElementById("checkbox1").checked;
+                chon = true;
+            };
+
+            document.getElementById("btn2").onclick = function () {
+                let chon= document.getElementById("checkbox1").checked;
+                chon = false;
+            };
+
+        </script>
+    </body>
+</html>
