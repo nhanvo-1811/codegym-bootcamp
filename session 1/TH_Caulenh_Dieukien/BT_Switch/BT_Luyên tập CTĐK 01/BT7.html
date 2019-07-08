@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Tính Cước điện thoại</title>
+</head>
+<script>
+    /* Tính cước điện thoại
+    Phí thuê bao bắt buộc 25 nghìn
+    600 đồng cho mỗi gọi của 50 phút đầu tiên.
+    400 đồng cho mỗi phút gọi của 150 phút tiếp theo.
+    200 đồng cho bất kỳ mỗi phút nào sau 200 phút đầu tiên.*/
+</script>
+<body>
+    <script>
+        let sophut = +prompt("Nhập số phút");
+        let phi;
+        let tong;
+        const phibatbuoc = 25000;
+        
+        if(sophut>200){
+            phi = (sophut-200)*200 + 150*400 + 50*600;
+        }else if(sophut>150){
+            phi= (sophut-150)*400 + 50*600;
+        } else {
+            phi = sophut*600
+        }
+        tong=0.1*phi+phibatbuoc;
+        
+        document.writeln("Cước điện thoại: " + phi);
+        
+        document.writeln("<br>Tổng số tiền phải nộp: " +tong );
+        
+    </script>
+</body>
+</html>

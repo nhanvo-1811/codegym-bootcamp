@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let diemKT = + prompt("Nhập điểm bài kiểm tra");
+        let diemGK = + prompt("Nhập điểm thi giữa kì");
+        let diemCK = + prompt("Nhập điểm thi cuối kì");
+        let diemTB = (diemCK+diemGK+diemKT)/3;
+        
+        while(diemCK<0 || diemGK<0 ||diemKT<0 || diemCK>10 ||diemGK>10 ||diemKT>10 ){
+         alert("Nhập sai điểm không đánh giá được");
+         diemKT = + prompt("Nhập điểm bài kiểm tra");
+         diemGK = + prompt("Nhập điểm thi giữa kì");
+         diemCK = + prompt("Nhập điểm thi cuối kì");
+        }
+        if(diemTB>=8.5){
+            alert("Học sinh giỏi");
+        }
+
+        if(diemTB>=7 && diemTB<8.5){
+            alert("Học sinh khá");
+        }
+
+        if(diemTB>=5.5 && diemTB<7){
+            alert("Học sinh Trung bình");
+        }else alert("Học sinh Yếu");
+       
+               
+    </script>
+</body>
+</html>

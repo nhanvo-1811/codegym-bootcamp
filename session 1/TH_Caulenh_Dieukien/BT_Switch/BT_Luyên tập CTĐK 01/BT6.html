@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const muc1 = 400000;
+        const muc2 = 600000;
+        const muc3 = 800000;
+        const thuong1 = 0.1;
+        const thuong2 = 0.15
+        const thuong3 = 0.2;
+        const thuong3_t = 0.3;
+        let doanhso = + prompt("Nhập doanh số bán hàng");
+        if(doanhso<muc1){
+            
+            alert("Hoa hồng nhận dc là 0")
+        }
+        if(doanhso>=muc1 && doanhso<muc2){
+
+            alert("Hoa hồng nhận dc là: " + doanhso*thuong1);
+        }
+        if(doanhso>=muc2 && doanhso<muc3){
+
+            alert("Hoa hồng nhận dc là: " + doanhso*thuong2);
+        }
+        if(doanhso>=muc3){
+
+            alert("Hoa hồng nhận dc là: " + (doanhso*thuong3+(doanhso-muc3)*thuong3_t));
+        }
+                
+    </script>
+</body>
+</html>
