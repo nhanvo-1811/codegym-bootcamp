@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Giá tiền điện</title>
+</head>
+<body>
+    <script>
+        let tieuthuC = +prompt("nhập điện tiêu thụ tháng cũ");
+        let tieuthuM = +prompt("nhập điện tiêu thụ mới");
+        let tieuthu=tieuthuM-tieuthuC;
+        const muc1=50;
+        const muc2=100;
+        const muc3=200;
+        const gia1=1678;
+        const gia2=1734;
+        const gia3=2014;
+        const gia4=2536
+        tieuthu<=muc1? alert("Giá tiền điện" + (tieuthu*gia1)) 
+            : (tieuthu>muc1) && (tieuthu<muc2)? alert("Giá tiền điện" + (tieuthu*gia2))
+                : (tieuthu>muc2) && (tieuthu<muc3)? alert("Giá tiền điện" + (tieuthu*gia3))
+                  : alert("Giá tiền điện" + (tieuthu*gia4)) 
+
+    </script>
+</body>
+</html>

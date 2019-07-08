@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let thunhap = +prompt("Thu nhập cá nhân");
+ 
+    (thunhap > 0) && (thunhap <= 5000000) ? alert("Thuế cá nhân: 0 " )
+       
+        : (thunhap > 5000000) && (thunhap<= 15000000) ? alert("Thuế cá nhân: " + ((thunhap - 5000000) * 0.1))
+           
+            : (thunhap> 15000000) &&  (thunhap<= 25000000) ? alert("Thuế cá nhân: " + (1000000 + ((thunhap - 15000000) * 0.2)))
+
+                : (thunhap > 25000000) && (thunhap <= 40000000) ? alert("Thuế cá nhân: " + (3000000 + ((thunhap - 25000000) * 0.3)))
+                    :  alert("Thuế cá nhân: " + (7500000 + ((thunhap- 40000000) * 0.4)));
+
+
+    </script>
+</body>
+</html>
