@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Bảng cửu chương</title>
+</head>
+<p>Bảng Cửu Chương</p>
+<style>
+    #td{
+        color: blue;
+        text-shadow: 2px 2px 5px seagreen;
+        font-size: 140%;
+        
+    }
+    #tbl{
+        
+        border-color:rgb(194, 30, 30);
+        border-collapse: collapse;
+        
+    }
+    p{
+        font-size: 50px;
+        color: blue;
+        text-align: center; 
+    }
+   
+     
+</style>
+<body>
+        <script>
+            let sout;
+            let i;
+            let j;
+            
+                sout = "<table id='tbl'border='2' width='1200' cellspacing='1' cellpadding='5'>"
+                
+                    for (i = 1; i <= 10; i++) {
+                        sout = sout + "<tr>";
+                    for (j = 2; j <= 10; j++) {
+                        sout = sout + "<td id='td'>" + j + " x " + i + " = " + i*j + "</td>";
+                    }
+                        sout = sout + "</tr>";
+                    }
+                sout = sout + "</table>";
+            document.write(sout);
+            
+    </script>
+</body>
+</html>
