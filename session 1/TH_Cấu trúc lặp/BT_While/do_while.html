@@ -8,14 +8,11 @@
 </head>
 <body>
     <script>
-        let num;
-        let total = 0;
-        while(num != -1){
-            num = + prompt("Enter a number: ");
-            alert(num);
-            total=total+num;
-        }
-        alert(total);
+        let value=null;
+        do{
+            value=+prompt("Nhập vào số từ 1 -> 10");
+        } while(value<1 || value>10)
+        alert("Số bạn vừa nhập: " + value);
     </script>
 </body>
 </html>
