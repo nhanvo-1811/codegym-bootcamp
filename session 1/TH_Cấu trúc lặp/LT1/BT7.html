@@ -8,22 +8,27 @@
 </head>
 <body>
     <script>
-        for(let i=0; i<=100; i++)
-        {   document.write(i + "<br>");
-            if (i%3==0)
-            {
-                document.write("Fizz"+"<br>");
+        let ht= "";
+        for(let i=1; i<=100; i++)
+        {   
+            if (i%3===0 && i%5===0)
+            {  
+                ht = ht+  "FizzBuzz : ";
+                
             }
-            if (i%5==0)
-            {
-                document.write("Buzz"+"<br>");
+            if (i%3===0)
+            {   ht=ht+ "Fizz : "
+                             
             }
-            if (i%3==0 ||i%5==0)
+            else if (i%5===0)
             {
-                document.write("FizzBuzz"+"<br>");
+                ht=ht+ "Buzz : "
+              
             }
+            else ht+=i + " ";
                
         }
+        document.write(ht);
     </script>
 </body>
 </html>

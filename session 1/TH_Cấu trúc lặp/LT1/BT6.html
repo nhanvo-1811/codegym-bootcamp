@@ -5,20 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <script src="JS/Fibonacci.js"> </script>
+    
 </head>
 <body>
     <script>
-    let i;
+    let i=0;
     let sum=0;
-        for(i=0; i<=30; i++)
-        {   if(fibo(i)%7==0)
-            {
-                sum=sum+fibo(i);
+    let dem=0;
+     
+         while(dem<=30){
+            if(i%7==0)
+            {   
+                sum=sum+i;
+                dem+=1;
             }
-            
+            i++;
         }
-         document.write("Tổng của 20 số đầu tiên trong dãy fibonacci: " + sum);
+         document.write("Tổng của 30 số đầu tiên trong dãy fibonacci: " + sum);
     </script>
 </body>
 </html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <button type="button" onclick="play()">Chơi</button>
+    <script>
+        function play()
+        {   let i=0;
+            let numdau = +prompt("Khoảng đầu");
+            let numsau = +prompt("khoảng sau");
+            let random = Math.floor(Math.random()*(numsau-numdau) + numdau);
+            console.log(random);
+           
+          
+      while(i<3)
+            {   let input = +prompt("Mời đoán giá trị đoán");
+                if(input===random)
+                    {
+                        alert("Bạn đã chiến thắng");
+                        break;                       
+                    }
+                else if(input>random)
+                    {
+                        alert("Số nhập vào là lớn hơn số muốn đoán ");
+                    }else 
+                if(input<random)
+                    {
+                        alert("Số nhập vào là nhỏ hơn số muốn đoán ");
+                    }
+             i++;
+             
+            } 
+            if(i==3) alert("Bạn thua cuộc mời chơi lại");
+        }
+    </script>
+</body>
+</html>
