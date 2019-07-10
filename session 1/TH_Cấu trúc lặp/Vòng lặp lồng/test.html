@@ -35,11 +35,37 @@
            
         }
         document.write("Số lớn nhất: " + max);*/
-        let i = 0;
+       /* let i = 0;
 while (i < 3) {
     console.log(i);
     i++;
+}*/
+/*let num;
+let tong=0;
+for( ;num!=0;){
+    num =+ prompt("nhập các số");
+    tong=tong+num;
 }
+
+document.write("tong: " + tong) ; */
+let out;
+let i;
+let j;
+out = "<table id='tb' border='1' width='300' cellspacing='1' cellpadding='5'>"
+for(i=1; i<=5; i++)
+    {
+        out = out + "<tr>";
+        for(j=1; j<=3; j++)
+    {
+        out= out + "<td>"  +"</td>";
+    }
+        out = out + "</tr>";
+    }
+    out = out + "</table>";
+    document.write(out);
+
+
+
     </script>
 </body>
 </html>

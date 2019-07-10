@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let nhietdo = + prompt("Nhập vào nhiệt độ");
+       // while(nhietdo !== 0)
+       for(;nhietdo !== 0;)
+        {
+            if(nhietdo>100)
+            {
+                document.write("Yêu cầu giảm nhiệt độ");
+                break;
+            }
+            if(nhietdo<20)
+            {
+               document.write("Yêu cầu tăng nhiệt độ");
+               break;
+            }
+        }
+    </script>
+</body>
+</html>
