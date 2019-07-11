@@ -26,10 +26,12 @@
                 
                 data += "<br/><br/><input type='button' value='Change Value' onclick='changeValue()'>"
                 b.innerHTML=data;
-            function changeValue() 
-                {   if(isNaN)
+            function changeValue(value) 
+                {  
                     let positionX = +prompt("X: ");
                     let positionY = +prompt("Y: ");
+                   
+                    if(!isNaN(value)){
                     data = "";
                     board[positionX][positionY] = "x";
                     for (let i = 0; i < 5; i++) 
@@ -42,6 +44,7 @@
                     }
                     data += "<br/><br/><input type='button' value='Change Value' onclick='changeValue()'>"
                     b.innerHTML = "<hr/>" + data;
+                }else b.innerHTML = "Mời nhập lại";
                 }       
             </script>
             
