@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Lãi ngân hàng</title>
+</head>
+<body>
+    <script>
+        let money= +prompt("Số tiền vay");
+        while (money<=0)
+        money= +prompt("Nhập lại số tiền vay ban đầu");
+
+        let month = +prompt("Số tháng vay");
+        while (month<=0)
+        month= +prompt("Nhập lại số tháng vay");
+
+        let percent= +prompt("Nhập lãi số phần trăm hàng tháng");
+        document.write("Lãi suất hàng tháng là "+percent+"%, lãi suất kép <br>");
+
+        let i=0;
+        let k=1;
+        for (i=1; i<=month; i++) {
+             k=k*(1+(percent/100));   
+         }
+        k= Math.round(k*1000)/1000;
+        let interest= k*money;
+
+        document.write("Tiền lãi là "+ interest) + "đồng";
+
+    </script>
+</body>
+</html>

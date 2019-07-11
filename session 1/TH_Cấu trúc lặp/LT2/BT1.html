@@ -5,13 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <script src="JS/Fibonacci.js"> </script>
+    <script src="../LT1/JS/Fibonacci.js"> </script>
 </head>
 
 <body> 
     <script> 
     let i;
-        for(i=0; i<=20; i++)
+    let num = + prompt("Nhập số số fibonacci muốn in ra");
+        for(i=0; i<=num; i++)
         {
             document.write("Số fibonacci thứ " + i +": " + fibo(i) + "<br>");
         }
