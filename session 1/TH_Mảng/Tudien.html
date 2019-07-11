@@ -1,0 +1,34 @@
+    
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Từ điển</title>
+</head>
+<body>
+    <input type="text" id= 'word' >
+    <button id = 'timKiem' onclick="tuDien();">Tìm Kiếm</button>
+    <p id='result'></p>
+    <script>
+      function tuDien(){
+       var english = ['computer', 'soccer', 'player', 'project', 'motorbike', 'music', 'pencil']
+       var vietnam = ['máy tính', 'bóng đá', 'người chơi', 'dự án', 'xe máy', 'âm nhạc', 'bút chì']
+       var word = document.getElementById('word').value;
+       
+       for (i=0; i<english.length; i++) {
+           if(word == english[i]) {
+              document.getElementById('result').innerHTML= (vietnam[i]);
+              console.log(english[i]);
+              break;
+           }else   document.getElementById('result').innerHTML = "Từ bạn nhập không có trong từ điển";
+              
+              
+       }
+      
+      }
+      
+    </script>
+</body>
+</html>

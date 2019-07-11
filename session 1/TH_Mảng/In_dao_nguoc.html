@@ -12,14 +12,21 @@
         let first=0;
         let last = x.length-1;
        // document.write(x.reverse());
-       while(first<last)
-       {
-           let b = x[first];
-           x[first] = x[last];
+    //    while(first<last)
+    //    {
+    //        let b = x[first];
+    //        x[first] = x[last];
+    //        x[last] = b;
+    //        first++;
+    //        last--;
+    //    }
+        for(let i=0; i<last;i++)
+        {
+            let b = x[i];
+           x[i] = x[last];
            x[last] = b;
-           first++;
            last--;
-       }
+        }
        document.write("chuỗi đảo ngược: " + x);
 
     </script>
