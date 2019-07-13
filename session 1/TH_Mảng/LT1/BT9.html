@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let ArrayA=[];
+        for(let i=0; i<3; i++) {
+            ArrayA[i] = +prompt('Nhập 10 phần tử cho mảng A');
+        }
+
+        let ArrayB =[];
+        for(let i=0; i<3; i++) {
+            ArrayB[i] = +prompt('Nhập 10 phần tử cho mảng B'); 
+        }
+
+        let ArrayC = [ArrayA.concat(ArrayB)];
+        document.write('mảng A: ['+ ArrayA + ']' + '<br><br>')
+        document.write('mảng B: ['+ ArrayB + ']' + '<br><br>')
+        document.write('mảng C: ['+ ArrayC + ']' + '<br><br>')
+        
+    </script>
+</body>
+</html>

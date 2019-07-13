@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let string = [-1, 55, 3, 6, 8, -9, 10, -88, 25, 0];
+        let dem=0;
+        let index = "";
+        
+        for(let i=0 ; i<string.length; i++)
+        {
+            if(string[i]<0)
+                {
+                    dem++;
+                    index += (i+1) + ", ";        
+            
+                }   
+        }
+        document.write(string.join(" | ") + "<br><br>");
+        document.write("Có " + dem +  " số nguyên âm" + "<br>");
+        document.write("Ở ví trí: "+ index.substring(0, index.length-2));//trả về chuỗi index từ vtri 0 đến index.length-2
+    </script>
+</body>
+</html>

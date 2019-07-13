@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <p id='result'></p>
+    <p id='result2'></p>
+    <script>
+        let array=[];
+        for(let i=0; i<10; i++)
+        {
+            array[i]= +prompt("Nhập vào 10 phần tử");
+        }
+        document.getElementById("result").innerHTML = "Phần tử trong mảng: " + "[" + array + "]" + "<br>"; 
+        let num = +prompt("Nhập số để kiểm tra số nguyên có trong mảng hay không");
+        for(let i=0 ; i<array.length; i++ )
+        {
+            if(num === array[i])
+            {   
+                document.getElementById("result2").innerHTML = num + " is in the array" + "<br>"; 
+                break;      
+            }
+            else 
+            {   
+                document.getElementById("result2").innerHTML = num + " is not in the array" + "<br>"; 
+            }  
+        }
+    </script>
+</body>
+</html>
