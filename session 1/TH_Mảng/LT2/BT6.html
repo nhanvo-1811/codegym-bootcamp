@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let str = prompt("nhập mảng ký tự");
+        let kytu = "-";
+        let array = [];
+        for(let i=0 ; i<str.length ; i++)
+        {   
+            if(kytu.indexOf(str[i] !== -1))
+            {
+                array.push(str[i].replace(kytu,"_"));
+            }
+            
+        }
+        document.write(array.join(''));
+
+    </script>
+</body>
+</html>

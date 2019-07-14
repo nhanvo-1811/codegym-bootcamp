@@ -9,13 +9,21 @@
 <body>
     <script>
         let ArrayA=[];
-        for(let i=0; i<3; i++) {
-            ArrayA[i] = +prompt('Nhập 10 phần tử cho mảng A');
+        for(let i=0; i<10; i++) {
+            do
+                {
+                    ArrayA[i] = + prompt("Nhập " + (i+1) + " phần tử mảng");
+                }
+            while(isNaN(  ArrayA[i] ))
         }
 
         let ArrayB =[];
-        for(let i=0; i<3; i++) {
-            ArrayB[i] = +prompt('Nhập 10 phần tử cho mảng B'); 
+        for(let i=0; i<10; i++) {
+            do
+                {
+                    ArrayB[i] = + prompt("Nhập " + (i+1) + " phần tử mảng");
+                }
+            while(isNaN(  ArrayB[i] ))
         }
 
         let ArrayC = [ArrayA.concat(ArrayB)];

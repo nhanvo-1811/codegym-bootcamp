@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let string = prompt("Nhập chuỗi");
+        let count=0;
+        /*
+        C1
+        string=string.trim() + " ";
+        for(let i=0; i<string.length; i++)
+        {
+            if(string[i] != " " && string[i+1] == " ")
+            {
+                count++;
+            }
+        }*/
+        //C2
+        if(string[0] != " ")
+            {
+                count++;
+            }
+        for(let i=0; i<string.length; i++)
+        {  
+            if(string[i] == " " && string[i+1] !=" " && string[i+1] !=null)
+            //kí tự khác dấu cách và kí tự thứ i+1 khác dấu cách và chưa phải là kí tự kêt thúc(string[i+1] !=null) thì count++
+            {
+                count++;
+            }
+        }
+        document.write("Chuỗi đã nhập: " + string +"<br>");
+        document.write("Số từ có trong chuỗi: "+ count);
+    </script>
+</body>
+</html>

@@ -11,12 +11,16 @@
 		let array=[];
 		let max=0;
 		let index = ' ';
-		for (let i=0 ; i<5 ; i++)
-            {
-                array[i] = + prompt("Nhập phần tử mảng");
+		
+		for (let i=0 ; i<3 ; i++)
+            {	do
+					{
+					array[i] = + prompt("Nhập " + (i+1) + " phần tử mảng");
+					}
+				while(isNaN(  array[i] ))
                 array[i]>max ? max=array[i]:max;
             }
-		for (let i =0 ; i<5 ; i++)
+		for (let i =0 ; i<10 ; i++)
 			{	if(max==array[i])
 				{
 				index = index +  (i+1) + ",";		

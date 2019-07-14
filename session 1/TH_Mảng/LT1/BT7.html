@@ -14,7 +14,11 @@
         let array=[];
         for(let i=0; i<10; i++)
         {
-            array[i]= +prompt("Nhập vào 10 phần tử");
+            do
+                {
+                array[i] = + prompt("Nhập " + (i+1) + " phần tử mảng");
+                }
+            while(isNaN(  array[i] ))
         }
         document.getElementById("result").innerHTML = "Phần tử trong mảng: " + array; 
         let num = +prompt("Nhập số để kiểm tra số nguyên có trong mảng hay không");

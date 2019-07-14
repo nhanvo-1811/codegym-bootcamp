@@ -15,7 +15,12 @@
         let gt=0
         for(i=0;i<10;i++)
         {
-            array[i] = + prompt("Nhâp phần tử mảng "+(i+1)+" : ");
+            do
+                {
+                array[i] = + prompt("Nhập " + (i+1) + " phần tử mảng");
+                }
+            while(isNaN(  array[i] ))
+            
             if(array[i]>10)
             {   
                 for(a in array)

@@ -14,7 +14,11 @@
         let sum = 0;
 		for (let i=0 ; i<5 ; i++)
             {
-                array[i] = + prompt("Nhập phần tử mảng");
+                do
+					{
+					array[i] = + prompt("Nhập " + (i+1) + " phần tử mảng");
+					}
+				while(isNaN(  array[i] ))
                 array[i]>max ? max=array[i]:max;
                 sum+=array[i];
             }

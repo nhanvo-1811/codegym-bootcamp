@@ -11,7 +11,11 @@
         let array = [];
         for(let i=0 ; i<10; i++)
         {   
-            array[i] = +prompt("Nhập 10 phần tử mảng");
+            do
+                {
+                array[i] = + prompt("Nhập " + (i+1) + " phần tử mảng");
+                }
+            while(isNaN(  array[i] ))
         }
         document.write("Mảng nhập vào: " + "[" + array + "]"+ "<br><br>");
         let A=array.sort(function(a,b)
