@@ -8,47 +8,49 @@
 </head>
 <body>
     <script>
-        let string=["A","a","A","B","3"];
+        let string=["C","A","A","B","3","D","B"];
         let array=[string[0]];
         for(let i=0; i<string.length ; i++)
-        {   /*c1:
-            if(array.indexOf(string[i]) !== 0)
+        {   //c1:
+            if(array.indexOf(string[i]) === -1)
             {
                 array.push(string[i]);
-             }*/
-             /* C2
-            if(kiemTra2(array, string[i]) === 0)
-            {
-                console.log(string[i] + ' - '+ kiemTra2(array, string[i]));
-                array.push(string[i]);
-            }*/
-            //C3
-            if(!kiemTra(array, string[i]))
-            {
-                array.push(string[i]);
-            }           
+            }
         }
-        //C3
-        function kiemTra(A, c){
-            for(let i = 0; i < A.length; i ++)
-            {
-                if(A[i] === c)
-                    return true;
+            // C2
+            // if(kiemTra2(array, string[i]) === 0)
+            // {
+            //     console.log(string[i] + ' - '+ kiemTra2(array, string[i]));
+            //     array.push(string[i]);
+            // }
+            
+        //     //C3
+        //     if(!kiemTra(array, string[i]))
+        //     {
+        //         array.push(string[i]);
+        //     }           
+        // }
+        // //C3
+        // function kiemTra(A, c){
+        //     for(let i = 0; i < A.length; i ++)
+        //     {
+        //         if(A[i] === c)
+        //             return true;
 
-            }
-            return false;
-        }/*
-        function kiemTra2(A, c){
-            if(A.length === 0)
-                return -1;
-            for(let i = 0; i < A.length; i ++)
-            {
-                if(A[i] === c)
-                    return 1;
+        //     }
+        //     return false;
+        
+        // function kiemTra2(A, c){
+        //     if(A.length === 0)
+        //         return -1;
+        //     for(let i = 0; i < A.length; i ++)
+        //     {
+        //         if(A[i] === c)
+        //             return 1;
 
-            }
-            return 0;
-        }*/
+        //     }
+        //     return 0;
+        // }
         document.write(array.join(' '));
         document.write("<br/>")
         document.write(array.length);
