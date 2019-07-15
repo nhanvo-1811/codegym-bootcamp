@@ -8,23 +8,50 @@
 </head>
 <body>
     <script>
-        let array=[];
-        let n = +prompt("Nhập kích thước của mảng"); 
-        let count=0;
-        let  G=0;
-        for(let i=0; i<n;i++)
-        {
-            array[i] = prompt("Nhập kí tự vào mảng")            
+        let string=["A","a","A","B","3"];
+        let array=[string[0]];
+        for(let i=0; i<string.length ; i++)
+        {   /*c1:
+            if(array.indexOf(string[i]) !== 0)
+            {
+                array.push(string[i]);
+             }*/
+             /* C2
+            if(kiemTra2(array, string[i]) === 0)
+            {
+                console.log(string[i] + ' - '+ kiemTra2(array, string[i]));
+                array.push(string[i]);
+            }*/
+            //C3
+            if(!kiemTra(array, string[i]))
+            {
+                array.push(string[i]);
+            }           
         }
-        for(let i=0 ; i<array.length ; i++)
-        {
-            if(UPPER.indexOf(array[i]!==-1))
-            { 
-                G++;
+        //C3
+        function kiemTra(A, c){
+            for(let i = 0; i < A.length; i ++)
+            {
+                if(A[i] === c)
+                    return true;
+
             }
-        count++;
-        }
-        document.write(count-G);
+            return false;
+        }/*
+        function kiemTra2(A, c){
+            if(A.length === 0)
+                return -1;
+            for(let i = 0; i < A.length; i ++)
+            {
+                if(A[i] === c)
+                    return 1;
+
+            }
+            return 0;
+        }*/
+        document.write(array.join(' '));
+        document.write("<br/>")
+        document.write(array.length);
     </script>
 </body>
 </html>
