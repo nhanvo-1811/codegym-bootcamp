@@ -14,12 +14,15 @@
         let meter;
         let foot;
         function footToMeter(foot)
-        {   foot = document.getElementById("num").value;
-            alert( meter = 0.305 * foot);
+        {   
+            foot = document.getElementById("num").value;
+            foot<0? alert("Mời nhập lại số lớn hơn 0")
+                : alert( meter = 0.305 * foot);
         }
         function meterToFoot(meter)
         {   meter = document.getElementById("num").value;
-            alert(foot = 3.279 * meter );
+            meter<0? alert("Mời nhập lại số lớn hơn 0")
+                : alert(foot = 3.279 * meter );
         }
     </script>
 </body>
