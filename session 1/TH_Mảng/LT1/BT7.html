@@ -16,7 +16,7 @@
         {
             do
                 {
-                array[i] = + prompt("Nhập " + (i+1) + " phần tử mảng");
+                array[i] = + prompt("Nhập phần tử thứ "+(i+1)+" của mảng");
                 }
             while(isNaN(  array[i] ))
         }
@@ -24,10 +24,10 @@
         let num = +prompt("Nhập số để kiểm tra số nguyên có trong mảng hay không");
         let array2 = [];
         for(let i=0 ; i<array.length; i++ )
-        {
+        { 
             if(num === array[i])
             {   
-              array.splice(i,1); // xóa 1 phần tử từ vị trí i
+              array.splice(i,1); // xóa 1 phần tử ở vị trí i
               document.getElementById("result2").innerHTML = "Phần tử trong mảng bị xóa: " + array ; 
               document.getElementById("result3").innerHTML = "Số đã xóa: " + num;  
               break;
