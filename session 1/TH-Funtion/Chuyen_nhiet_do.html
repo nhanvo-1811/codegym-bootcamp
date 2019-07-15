@@ -14,12 +14,13 @@
     <input type="button" onclick="temperatureConverter()" value="Click me">
     <p>Celsius: <span id="result"></span></p>
     <script>
+        //C1:
         function temperatureConverter(valNum)
         {
             valNum = document.getElementById("input").value;
             document.getElementById("result").innerHTML =(valNum-32) / 1.8; ;
         }
-// <!-- <form>
+// C2: <!-- <form>
 //         <p>
 //             <label>Fahrenheit</label>
 //             <input id="inputFahrenheit" type="number" placeholder="Fahrenheit"

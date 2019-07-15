@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let arr1 = [3, 5, 1, 8, -3, 7, 8];
+        let arr2 = [7, 12, 6, 9, 20, 56, 89]
+        let arr3 = []
+        let arr4 = [0, 0, 0, 0, 0, 0]
+        document.write("[" + arr1.join(" ") +"]" + "<br>");
+        document.write("[" + arr2.join(" ") +"]" + "<br>");
+        document.write("[" + arr3.join(" ") +"]" + "<br>");
+        document.write("[" + arr4.join(" ") +"]" + "<br>");
+        function minArray(arr)
+        {   if(arr.length == 0)
+            return -1;
+            let min = arr[0];
+            for(let i=0 ; i<arr.length ; i++)
+            {
+                if(arr[i]<min)
+                {
+                    min=arr[i];
+                }
+            }
+            return min;
+
+        }
+        function CheckMin()
+        {        
+            let min1 = minArray(arr1);
+            alert("Mảng arr1 có giá trị min: " + min1 + " có vị trí:" + arr1.indexOf(min1))
+            let min2 = minArray(arr2);
+            alert("Mảng arr2 có giá trị min: " + min2 + " có vị trí:" + arr2.indexOf(min2))
+            if(minArray(arr3)==-1)
+            {
+                alert("Mảng Rỗng");
+            }
+            else
+            {
+                let min3 = minArray(arr3);
+                alert("Mảng arr3 có giá trị min: " + min3 + " có vị trí:" + arr3.indexOf(min3))
+            }
+            let min4 = minArray(arr4);
+            alert("Mảng arr4 có giá trị min: " + min4 + " có vị trí:" + arr4.indexOf(min4))
+        }
+    </script>
+</body>
+<button type="button" onclick="CheckMin()"> Kiểm tra </button>
+</html>
