@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let count = 0;
+        let n=2;
+        function kt_nguyento(number)
+        {
+           let i;
+           let m = Math.sqrt(number);
+            for (i=2 ; i<= m; i++)
+            {
+                if(number%i==0)
+                {
+                    return false;                   
+                }             
+            }      
+            return true;
+        }
+        while(count<10000)
+        {
+           if(kt_nguyento(n))
+           {    if(n<10000)
+                { 
+                    document.write("Số nguyên tố thứ "+ (count+1) +":  "+ n +"<br>");
+                }
+                count++
+            }
+            n++;
+        }
+    </script>
+</body>
+</html>
