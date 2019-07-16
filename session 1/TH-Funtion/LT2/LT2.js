@@ -68,9 +68,11 @@ function checkNumpositive()
     
 }
 //BT7
-function swap(a,b)
+function swap(Arr)
 {
-   return [a,b]=[b,a];
+  let t=Arr[0];
+  Arr[0]=Arr[1];
+  Arr[1]=t;
 }
 //BT8
 function reverse(Arr)

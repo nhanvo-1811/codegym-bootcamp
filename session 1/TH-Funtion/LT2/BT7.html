@@ -11,7 +11,10 @@
     <script>
         let num = + prompt("Nhập số thứ nhất");
         let num2 = + prompt("Nhập số thứ hai");
-        document.write(swap(num,num2));
+        let array = [num,num2];
+        document.write("Số chưa đảo "+ array + "<br>")
+        swap(array)
+        document.write("Số đã đảo " + array);
     </script>
 </body>
 </html>
