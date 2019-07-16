@@ -28,21 +28,14 @@ function addNumbers()
     return result;
 }
 //BT5
-function starZodiac()
-{   let star = ["Polaris", "Aldebaran", "Deneb", "Vega", "Altair", "Dubhe", "Regulus"];
-    let Zodiac = ["Ursa Minor", "Tarurus", "Cygnus", "Lyra", "Aquila", "Ursa Major", "Leo"]
-    //let input = document.getElementById("input").value;
-    let input = prompt("Nhập star");
-    for(let i=0; i<star.length; i++)
+function find(A,c)
+{
+    for(let i=0; i<A.length;i++)
     {
-        for(let i=0; i<Zodiac.length; i++)
+        if(A[i]===c)
         {
-            if(input==star[i])
-            {
-                document.getElementById("result").innerHTML=Zodiac[i];
-                break;
-            }else document.getElementById("result").innerHTML = "Không tìm thấy ngôi sao nào";
-        }
+            return i;
+        } 
     }
-
+    return -1;
 }

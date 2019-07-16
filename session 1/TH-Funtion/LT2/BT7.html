@@ -5,14 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <script src="LT1.js"></script>
+    <script src="LT2.js"></script>
 </head>
 <body>
     <script>
-        result = 0;
-        alert("Giá trị của biến result trước khi gọi hàm: " + result);
-        result = addNumbers(); 
-        alert("Giá trị của biến result sau khi gọi hàm: " + result);
+        let num = + prompt("Nhập số thứ nhất");
+        let num2 = + prompt("Nhập số thứ hai");
+        document.write(swap(num,num2));
     </script>
 </body>
 </html>

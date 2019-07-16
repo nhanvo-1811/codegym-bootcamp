@@ -7,7 +7,17 @@
     <title>Document</title>
     <script src="LT1.js"></script>
 </head>
-<body onload="starZodiac()">
-    <p id="result"></p>
+<body >
+    <script>
+    let star = ["Polaris", "Aldebaran", "Deneb", "Vega", "Altair", "Dubhe", "Regulus"];
+    let Zodiac = ["Ursa Minor", "Tarurus", "Cygnus", "Lyra", "Aquila", "Ursa Major", "Leo"];
+    let input = prompt("Nhập từ khóa");
+    let vt = find(star,input);
+    
+    vt >=0 ? alert(Zodiac[vt])
+        : rt("Không tìm thấy ngôi sao nào.");
+    
+        
+    </script>
 </body>
 </html>
