@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id="myCanvas" width="400" height="300" style="border:1px solid #e9e9f0;"></canvas>
+    <h3 id="Acreage"></h3>
+    <h3 id="Perimeter"></h3>
+        <script>
+            let c = document.getElementById("myCanvas");
+            let ctx = c.getContext("2d");
+
+            let Rectangle = function(height,width)
+            {
+                this.height =height;
+                this.width = width;
+
+                this.getAcreage = function()
+                {
+                    return this.height*this.width;
+                }
+
+                this.getPerimeter = function()
+                {
+                    return (this.height+this.width)*2;
+                }
+            }
+
+            let rect = new Rectangle(120,180)
+            ctx.rect(120,80,rect.width,rect.height)
+            ctx.stroke();
+            ctx.fillStyle = "#000658";
+            ctx.fill();
+            document.getElementById("Acreage").innerHTML="Diện tích hình chữ nhật: " + rect.getAcreage();
+            document.getElementById("Perimeter").innerHTML="Chu vi hình chữ nhật: " + rect.getPerimeter();
+        </script>
+</body>
+</html>
