@@ -13,62 +13,83 @@
                 this.day = day;
                 this.month = month;
                 this.year = year;
+
                 this.getday = function()   
-                    {
-                        return this.day;
-                    }     
+                {   
+                    return this.day;
+                }     
+
                 this.getmonth = function()   
                 {
                     return this.month;
+                
                 } 
+
                 this.getyear = function()   
                 {
                     return this.year;
                 }
+
                 this.setday = function(day)   
-                    {
-                         this.day  = day;
-                    }  
-                this.setmonth = function(month)   
-                    {
-                         this.month  = month;
-                    }        
-                this.setyear = function(year)   
-                    {
-                         this.year  = year;
-                    }
-                this.setDate = function(day,month,year)
-                    {
+                {   
+                    if(this.ktday(day)) {
                         this.day  = day;
-                        this.month  = month;
-                        this.year  = year;
+                    } else {
+                        alert('error');
                     }
+                }  
+
+                this.setmonth = function(month)   
+                {
+                        this.month  = month;
+                }   
+
+                this.setyear = function(year)   
+                {
+                        this.year  = year;
+                }
+
                 this.setDate = function(day,month,year)
                 {
                     this.day  = day;
                     this.month  = month;
                     this.year  = year;
                 }
+              
                 this.toString = function()
                 {
-                    return "0" + this.day + "/" + "0"+this.month + "/" + this.year
+                    return  + this.day + "/" +this.month + "/" + this.year
+                }
+
+                this.ktday = function(day)
+                {
+                     if(day < 1 || day > 31) return false;
+                     return true;
                 }
             }
-         let date = new MyDate(2, 2, 2007);
-         alert(date.day + "/" + date.month + "/" + date.year);//get
+
+        let date = new MyDate(8, 2, 2007);
+        alert(date.day + "/" + date.month + "/" + date.year);//get
         let day = date.getday()
         let month = date.getmonth()
         let year = date.getyear()
 
-        date.setday(8)  
-        date.setmonth(8)
-        date.setyear(2005)
-        alert(date.getday() + "/" + date.getmonth() + "/" + date.getyear())
+        //   let dayNew = 32;
+        //   if (date.ktday(dayNew)) {
+        //     date.setday(dayNew)
+        //   } else {
+        //         alert('ko hop le');
+        //   }
+        // date.setday(2)
+          
+        // date.setmonth(8)
+        // date.setyear(2005)
+        // alert(date.getday() + "/" + date.getmonth() + "/" + date.getyear())
         
-        date.setDate(9,7,2026);
-        alert(date.day + "/" + date.month + "/" + date.year)
-        date.setDate(9,7,2028);
-        alert(date.toString());
+        // date.setDate(45,7,2026);
+        // alert(date.day + "/" + date.month + "/" + date.year)
+        // date.setDate(29,7,2028);
+        // alert(date.toString());
 
     </script>
 </body>

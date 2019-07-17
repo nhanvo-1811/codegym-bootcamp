@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+        <canvas id="myCanvas" width="400" height="300" style="border:1px solid #d3d3d3;">
+    <script>
+        let c = document.getElementById("myCanvas");
+        let ctx = c.getContext("2d");
+        
+        let Mycircle = function (radius, color)
+        {
+            this.radius = radius;
+            this.color = color;
+            this.getRadius = function(radius)
+            {
+                return this.radius*2*3.14;
+            }
+
+            this.getArea = function(radius)
+            {
+                return Math.pow(this.radius,2)*3.14;
+            }
+         
+        }
+        let Circle = new Mycircle(140 , "red")
+        ctx.beginPath();
+        ctx.arc(200 , 150 , Circle.radius , 0 , 2*Math.PI);
+        ctx.stroke();
+    
+        alert("Chu vi hình tròn: " + Math.round(Circle.getRadius()*100)/100);
+        alert("Diện tích hình tròn: " + Math.round(Circle.getArea()*100)/100);
+
+    </script>
+</body>
+</html>
