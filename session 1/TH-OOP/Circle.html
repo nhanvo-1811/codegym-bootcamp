@@ -12,10 +12,10 @@
         let c = document.getElementById("myCanvas");
         let ctx = c.getContext("2d");
         
-        let Mycircle = function (radius, color)
+        let Mycircle = function (radius, )
         {
             this.radius = radius;
-            this.color = color;
+
             this.getRadius = function(radius)
             {
                 return this.radius*2*3.14;
@@ -27,6 +27,7 @@
             }
          
         }
+        
         let Circle = new Mycircle(140 , "red")
         ctx.beginPath();
         ctx.arc(200 , 150 , Circle.radius , 0 , 2*Math.PI);
