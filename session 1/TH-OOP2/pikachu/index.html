@@ -24,7 +24,7 @@
                 this.move = 25;
             }
 
-            createImage() //tạo phương thức image 
+            createImage() 
             {
                 return  "<img src='" + this.src +  
                         "' width='" + this.width +  
@@ -33,22 +33,26 @@
                         "px; left: "+ this.left + 
                         "px; position: absolute;'>";
             }
-            moveRight() //Phương thức pikachua qua trái 
+            moveRight() 
             {
                 this.left += this.move;
                 this.src = "pikachu-right.png"
+                if(this.left==150)
+                {
+                    this.src = "troll.jpg"
+                }
             }
-            moveLeft() //Phương thức pikachua qua phải 
+            moveLeft()
             {
                 this.left -= this.move;
                 this.src = "pikachu-left.png"
             }
-            moveTop() //Phương thức pikachua qua top 
+            moveTop() 
             {
                 this.top -= this.move;
                 this.src = "pikachu_top.jpg"
             }
-            moveDown() //Phương thức pikachua qua trái 
+            moveDown() 
             {
                 this.top += this.move;
                 this.src = "pikachu_down.png"
