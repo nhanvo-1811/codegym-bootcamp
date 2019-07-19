@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<div id="game">
+    <!-- <img src="pikachuu.png" style="top: 0px; left: 0px; position: absolute; " width="500" height="580px"> -->
+</div>
+
+<body onload="doEvent()">
+    <script>
+        class Pikachu 
+        {   
+            constructor (src, width, height, left, top)
+            {
+                this.src = src;
+                this.width = width;
+                this.height = height;
+                this.left = left;
+                this.top = top;
+                this.move = 5;
+            }
+
+            createImage() //tạo phương thức image 
+            {
+                return  "<img src='" + this.src +  
+                        "' width='" + this.width +  
+                        "' height='" + this.height + 
+                        "' style='top: " +this.top +
+                        "px; left: "+ this.left + 
+                        "px; position: absolute;'>";
+            }
+            moveRight() //Phương thức pikachua qua trái 
+            {
+                this.left += this.move;
+                this.src = "pikachu-right.png"
+            }
+            moveLeft() //Phương thức pikachua qua phải 
+            {
+                this.left -= this.move;
+                this.src = "pikachu-left.png"
+            }
+            moveTop() //Phương thức pikachua qua top 
+            {
+                this.top -= this.move;
+                this.src = "pikachu.jpg"
+            }
+            moveDown() //Phương thức pikachua qua trái 
+            {
+                this.top += this.move;
+                this.src = "pikachu_left.png"
+            }
+        }
+
+        let pikachu = new Pikachu("pikachuu.png", 200, 200, 0, 0)
+        document.getElementById("game").innerHTML = pikachu.createImage(); 
+
+        function doEvent()
+        {
+            window.addEventListener("keydown", movePikachu);
+        }
+
+        function movePikachu(evt)
+        {
+            switch (evt.keyCode)
+            {   
+                case 37:
+                    pikachu.moveLeft();
+                    document.getElementById("game").innerHTML = pikachu.createImage(); 
+                    break;
+                case 39:
+                    pikachu.moveRight();
+                    document.getElementById("game").innerHTML = pikachu.createImage(); 
+                    break;
+                case 38:
+                    pikachu.moveTop();
+                    document.getElementById("game").innerHTML = pikachu.createImage(); 
+                    break;
+                case 40:
+                    pikachu.moveDown();
+                    document.getElementById("game").innerHTML = pikachu.createImage(); 
+                    break;    
+            }
+        }
+    </script>
+</body>
+</html>
