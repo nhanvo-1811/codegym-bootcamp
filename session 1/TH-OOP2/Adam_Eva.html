@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+    
+    <script>
+        class Person
+        {
+            constructor(name, gender, weight)
+            {
+                this.name = name;
+                this.gender = gender;
+                this.weight = weight;
+            }
+            Eat = function(apple)
+            {
+                apple.Decrease();
+                this.weight+=2;
+            }
+        }
+
+        class Apple
+        {
+            constructor(weight)
+            {
+                this.weight = weight;
+            }
+            Decrease = function()
+            {
+                this.weight--;
+            }
+        }
+
+        let adam = new Person("Adam", "Male", 70)
+        let apple = new Apple(12);
+        let eva = new Person("Eva", "Female", 55)
+    </script>
+</body>
+</html>
