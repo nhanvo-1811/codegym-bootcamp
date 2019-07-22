@@ -86,13 +86,15 @@
                 let img = new Image("On.jpg",200,200,0,0)
                 switchButton.switchOn();
                 btn.value = "Off";
-                document.getElementById("result").innerHTML = img.createImage() 
+                document.getElementById("result").innerHTML = img.createImage()
+                alert("Flash On"); 
             }else 
             {
                 let img = new Image("Off.jpg", 200, 200, 0, 0)
                 switchButton.switchOn();
                 btn.value = "On";
                 document.getElementById("result").innerHTML = img.createImage();
+                alert("Flash Off"); 
             }
        
         }
