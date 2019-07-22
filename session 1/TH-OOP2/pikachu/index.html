@@ -22,6 +22,7 @@
                 this.left = left;
                 this.top = top;
                 this.move = 25;
+                this.turn = 0
             }
 
             createImage() 
@@ -36,24 +37,40 @@
             moveRight() 
             {
                 this.left += this.move;
-                this.src = "pikachu-right.png"
-                if(this.left==150)
-                {
+                this.src = "pikachu-right.png" 
+                this.turn+=1;
+                if(this.turn==4)
+                {   
+                    this.turn=0;
                     this.src = "troll.jpg"
+                    console.log(this.left)
                 }
             }
             moveLeft()
-            {
-                this.left -= this.move;
-                this.src = "pikachu-left.png"
+            {   if(this.left===-25)
+                {
+                    this.left=this.left
+                }
+                else
+                {
+                    this.left -= this.move;
+                    this.src = "pikachu-left.png"
+                }
             }
             moveTop() 
             {
-                this.top -= this.move;
-                this.src = "pikachu_top.jpg"
+                if(this.top===0)
+                {
+                    this.top=this.top
+                }
+                else
+                {
+                    this.top -= this.move;
+                    this.src = "pikachu_top.jpg"
+                }
             }
             moveDown() 
-            {
+            {   
                 this.top += this.move;
                 this.src = "pikachu_down.png"
             }
@@ -73,7 +90,8 @@
             {   
                 case 37:
                     pikachu.moveLeft();
-                    document.getElementById("game").innerHTML = pikachu.createImage(); 
+                    document.getElementById("game").innerHTML = pikachu.createImage();
+                     
                     break;
                 case 39:
                     pikachu.moveRight();
