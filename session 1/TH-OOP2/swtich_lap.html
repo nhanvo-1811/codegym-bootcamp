@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <input type="button" name="" id="btn" onclick="On(1)" value="On">
+    <input type="button" name="" id="btn" onclick="Off(2)" value="Off">
+    <h2 id="result"></h2>
+    <script>
+        class SwitchButton
+        {
+            constructor(status)
+            {
+                this.status = status;
+            }
+            connetToLamp()
+            {
+                this.electricLamp = electricLamp;
+            }
+            switchOff = function()
+            {   
+                electricLamp.turnOff()
+                this.status = false;
+            } 
+            switchOn = function()
+            {   
+                electricLamp.turnOn()
+                this.status = true;
+            }      
+
+            
+            createImage() 
+            {
+                return  "<img src='" + this.src +  
+                        "' width='" + this.width +  
+                        "' height='" + this.height + 
+                        "' style='top: " +this.top +
+                        "px; left: "+ this.left + 
+                        "px; position: absolute;'>";
+            }
+        }   
+
+        class ElectricLamp
+        {
+            constructor(status)
+            {
+                this.status = status;
+            }
+            turnOn = function()
+            {
+                this.status = true;     
+            }
+            turnOff = function()
+            {
+                this.status = false;
+            }
+        }
+
+        
+        let electricLamp = new ElectricLamp(false);
+        let switchButton = new SwitchButton(false);
+        let switchButton2 = new SwitchButton(false);
+
+   
+        
+    </script>
+
+    
+</body>
+</html>

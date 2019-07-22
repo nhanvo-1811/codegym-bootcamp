@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div style="width: 300px;">
+        <center> <p id="result"></p></center>
+        <center><input type="button" name="" id="btn" onclick="Switch()" value="" ></center>
+    </div>
+    <script>
+        class SwitchButton
+        {
+            constructor(status)
+            {
+                this.status = status;
+            }
+            connetToLamp()
+            {
+                this.electricLamp = electricLamp;
+            }
+            switchOff = function()
+            {   
+                electricLamp.turnOff()
+                this.status = false;
+            } 
+            switchOn = function()
+            {   
+                electricLamp.turnOn()
+                this.status = true;
+            }
+              
+        }   
+
+        class Image 
+        {   
+            constructor (src, width, height, left, top)
+            {
+                this.src = src;
+                this.width = width;
+                this.height = height;
+                this.left = left;
+                this.top = top;
+              
+            }
+            createImage() 
+            {
+                return  "<img src='" + this.src +  
+                        "' width='" + this.width +  
+                        "' height='" + this.height + 
+                        "' style='top: " +this.top +
+                        "px; left: "+ this.left + 
+                        "px;'>";
+            }
+        }
+        class ElectricLamp
+        {
+            constructor(status)
+            {
+                this.status = status;
+            }
+            turnOn = function()
+            {
+                this.status = true;     
+            }
+            turnOff = function()
+            {
+                this.status = false;
+            }
+        }
+
+        let electricLamp = new ElectricLamp(false);
+        let switchButton = new SwitchButton(false);
+        let img = new Image("Off.jpg", 200, 200, 0, 0)
+        document.getElementById("result").innerHTML = img.createImage();
+        let btn = document.getElementById("btn");
+        btn.value = 'On';
+       
+        function Switch()
+        {   
+            if(btn.value === "On")
+            {
+                let img = new Image("On.jpg",200,200,0,0)
+                switchButton.switchOn();
+                btn.value = "Off";
+                document.getElementById("result").innerHTML = img.createImage() 
+            }else 
+            {
+                let img = new Image("Off.jpg", 200, 200, 0, 0)
+                switchButton.switchOn();
+                btn.value = "On";
+                document.getElementById("result").innerHTML = img.createImage();
+            }
+       
+        }
+    </script>
+
+    
+</body>
+</html>
