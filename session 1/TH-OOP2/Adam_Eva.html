@@ -6,9 +6,61 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 </head>
-<body>
-
+<style>
+    table, th, tr, td{
+        border: 1px solid black ;
+        border-collapse: collapse;
+        padding: 5px;
+        text-align: center;
+        font-size: 40px;
+    }
+    th, td
+    {
+        width: 80px;
+    }
     
+</style>
+
+<body>
+    <table style="widows: 100%;" >
+        <tr>
+            <th>Adam</ht>
+            <th>Eva</th>
+        </tr>
+
+        <tr>
+            <td id="weightAdam"></td>
+            <td id="weightEva"></td>
+        </tr>
+        <tr>
+            <td>
+                <input type="button" onclick="eatApple(1)" value="Eat" style="font-size: 30px; width: 100px" >
+            </td>
+            <td >
+                <input type="button" onclick="eatApple(2)" value="Eat"  style="font-size: 30px; width: 100px">
+            </td>
+        </tr>
+        <tr>
+            <td id="weightApple" colspan="2"></td>
+           
+        </tr>
+        <td>
+            <input id="adammes" type="text"  value=" " style="width: 500px; height: 50px; font-size: 30px">
+        </td>
+        <td >
+            <input id="evames" type="text" value=" " style="width: 500px; height: 50px; font-size: 30px">
+        </td>
+        <tr>
+            <td>
+                <input type="button" onclick="mess(1)" value="Submit" style="font-size: 30px; width: 180px" >
+            </td>
+            <td >
+                <input type="button" onclick="mess(2)" value="Submit"  style="font-size: 30px; width: 180px">
+            </td>
+        </tr>
+    </table>
+    <h2 id="result"></h2>
+   
     <script>
         class Person
         {
@@ -18,28 +70,68 @@
                 this.gender = gender;
                 this.weight = weight;
             }
-            Eat = function(apple)
+            eat = function (apple) 
             {
-                apple.Decrease();
-                this.weight+=2;
+                apple.decrease();
+                this.weight+=1;
             }
         }
 
         class Apple
-        {
-            constructor(weight)
-            {
-                this.weight = weight;
-            }
-            Decrease = function()
+        {   
+            decrease = function()
             {
                 this.weight--;
             }
+            constructor(weight)
+            {
+                this.weight = weight;
+            };
+            
         }
 
         let adam = new Person("Adam", "Male", 70)
         let apple = new Apple(12);
         let eva = new Person("Eva", "Female", 55)
+
+        let mesadam = document.getElementById("adammes");
+        let meseva = document.getElementById("evames");
+
+        let message ="";
+        document.getElementById("weightAdam").innerHTML = adam.weight;
+        document.getElementById("weightEva").innerHTML = eva.weight;
+        document.getElementById("weightApple").innerHTML = apple.weight;
+
+
+        function eatApple(id)
+        {   
+            let obj = id == 1 ? adam : eva;
+            obj.eat(apple);
+            if(apple.weight>=0)
+            {
+                document.getElementById("weightApple").innerHTML = apple.weight;
+                message = obj.name + ': eat miếng thứ ' + (12-apple.weight) + '<br>';
+                document.getElementById("weightAdam").innerHTML = adam.weight;
+                document.getElementById("weightEva").innerHTML = eva.weight;
+                document.getElementById("result").innerHTML += message;
+            } else
+            {
+                apple.weight=apple.weight
+                alert("Hết táo rồi")
+            }
+            
+        }
+
+        function mess(id, message)
+        {   
+            let obj = id == 1 ? adam : eva;
+            let msg = id == 1 ? mesadam.value : meseva.value;
+            message = obj.name + ": " + msg + "<br>";
+            document.getElementById("result").innerHTML += message;
+            mesadam.value = " "
+            meseva.value = " "
+
+        }
     </script>
 </body>
 </html>
