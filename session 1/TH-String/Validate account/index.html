@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vali Acc</title>
+    <script src="vali_Acc.js"></script>
+</head>
+<body>
+
+    <input type="text" id="acc" onfocus="this.value=''" value="">
+    <button type="button" onclick="valiacc()">Kiểm tra</button>
+
+    <script>   
+        function valiacc()
+        {
+            let acc = document.getElementById("acc").value;
+            console.log(validate_Email(acc));
+        }
+    </script>
+</body>
+</html>
