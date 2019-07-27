@@ -37,10 +37,10 @@
         return max;
     }
     let nums = [];
-    for (let i = 0; i < 5; i++) {
-       nums[i] = +prompt("Nhập phần tử thứ "+ (i+1) + " mảng");
-       document.write(nums[i] + " ");
-       
+    for(let i=0; i<100; ++i)
+    {
+        nums[i] = Math.floor(Math.random() * 101);    
+        document.write(nums[i] + "  ");   
     }
     let minValue = findMin(nums);
 
