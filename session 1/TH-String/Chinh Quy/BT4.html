@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>bai | [*Bài tập] Luyện tập sử dụng biểu thức chính quy</title>
+</head>
+
+<body>
+    <p>Nhập pass gồm 11 chữ số</p>
+    <input type="text" id="pass">
+    <input type="button" value="Test" id="test" onclick="test()"> <br>
+    <br>
+    <div id="result"></div>
+</body>
+<script>
+    function ispass(str) {
+        regexp = /^([0-9]{11})$/;
+        if (regexp.test(str)) {
+            return true;
+        }
+        return false;
+    }
+    let zipcode;
+    let pass = document.getElementById("pass");
+    let result = document.getElementById("result");
+    function test() {
+        zipcode = pass.value;
+        result.innerHTML = ispass(zipcode) ? "pass Hợp lệ <br>" : "pass không hợp lệ <br>";
+    }
+</script>
+
+</html>
