@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Câu 4</title>
+</head>
+<body>
+    <canvas id="myCanvas" width="400" height="300" style="border:2px solid #1717e2;"></canvas>  
+    <script>
+        class Rectangle
+        {
+            constructor (x, y, height,width, color)
+            {
+                this.x = x;
+                this.y = y;
+                this.height = height;
+                this.width = width;
+                this.color = color; 
+            }
+            render(idCanvas)
+            {
+                let c = document.getElementById("myCanvas");
+                let ctx = c.getContext("2d");
+                ctx.rect(this.x, this.y, this.width, this.height)
+                ctx.stroke();
+                ctx.fillStyle = this.color;
+                ctx.fill();
+            }
+        }
+        let rect = new Rectangle(10, 10, 200, 100, "#000000")
+        let c = document.getElementById("myCanvas");
+        let ctx = c.getContext("2d");
+        rect.render(myCanvas)
+    </script>
+</body>
+</html>

@@ -12,7 +12,10 @@
         let year1 = year % 4 == 0;
         let year2 = year % 100 == 0; 
         let year3 = year % 400 == 0;
-        if (year1) {
+        
+        function isLeapYear(year)
+        {
+          if (year1) {
             if (year2) {
               if (year3) {
                 alert(year + " is a leap year");
@@ -25,6 +28,9 @@
           } else {
             alert(year + " is NOT a leap year");
             }
+        }
+
+        isLeapYear(year);
         </script>
           
 </body>

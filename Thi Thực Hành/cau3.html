@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Câu 3</title>
+</head>
+<body>
+    <script>
+        let number;
+
+        while(isNaN(number) || number == 0 || number == 1)
+            {
+                number= +prompt("Nhập số kiểm tra");
+            }
+
+        function isPrime(number)
+        {
+            let m = Math.sqrt(number);
+            for (let i=2 ; i<= m; i++)
+            {
+                if(number%i==0)
+                {
+                    return false;               
+                }
+            }         
+            return true;
+        }
+
+        if(isPrime(number))
+        {
+            document.write("Số nhập vào là số nguyên tố: " + number);
+            console.log(isPrime(number))
+        }
+    </script>
+</body>
+</html>

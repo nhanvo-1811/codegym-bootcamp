@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Câu 2</title>
+</head>
+<body>
+    <script>
+        let array = new Array ();
+        let index;
+        for(let i = 0; i<5; i++)
+        {   
+            while(isNaN(array[i]))
+            {
+                array[i]= + prompt("Nhập phần tử thứ: " + (i+1));
+            }
+        }
+        document.write("Mảng đã nhập: " +array + "<br>");
+
+        while(isNaN(index))
+            {
+                index= + prompt("Nhập vị trí muốn xóa");
+            }
+        
+        function tryRemoveFromArray(arr)
+        {      
+            if(index<0 || index>arr.length)
+            {
+                alert("Vị trí bạn nhập không nằm trong mảng");
+            }
+            else
+            {
+                for(let i = index; i < arr.length-1; i++)
+                {
+                    arr[i]=arr[i+1];
+                    arr.length = arr.length-1;
+                    document.write("Mảng đã xóa: " +arr);
+                }
+            }  
+        }
+
+        tryRemoveFromArray(array);
+    </script>
+</body>
+</html>
