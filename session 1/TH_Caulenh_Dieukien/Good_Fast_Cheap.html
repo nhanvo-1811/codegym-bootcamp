@@ -7,28 +7,38 @@
     <title>Document</title>
 </head>
 <body>
-    <input type="checkbox" name="good" id="g" value="Good"> Good <br>
-    <input type="checkbox" name="fast" id="f" value="Fast"> Fast <br>
-    <input type="checkbox" name="cheap" id="c" value="Cheap"> Cheap <br>
+    <input type="checkbox" name="fast" id="f" value="Fast" onclick="Fast()"> Fast <br>
+    <input type="checkbox" name="good" id="g" value="Good" onclick="Good()"> Good <br>
+    <input type="checkbox" name="cheap" id="c" value="Cheap" onclick="Cheap()"> Cheap <br>
 
     <script>
         let good = document.getElementById("g");
         let fast = document.getElementById("f")
         let cheap = document.getElementById("c")
 
-        good.checked;
-        fast.checked;
-        cheap.checked;
-        if(good.checked)
-            if(fast.checked)
-                if(cheap.checked)
-                    good.checked=false;
+        function Cheap()
+        {
+            if (fast.checked && good.checked && cheap.checked)
+            {
+                good.checked = false;
+            }
+        }
 
-        // if(good.checked = true)
-        //     {if(fast.checked= true)
-        //        { if(cheap.checked= true)
-        //            {  fast.checked=false;}}}
-        
+        function Fast()
+        {
+            if (fast.checked && good.checked && cheap.checked)
+            {
+                cheap.checked = false;
+            }
+        }
+
+        function Good()
+        {
+            if (fast.checked && good.checked && cheap.checked)
+            {
+                fast.checked = false;
+            }
+        }
     </script>
 </body>
 </html>
