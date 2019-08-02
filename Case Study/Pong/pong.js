@@ -128,7 +128,7 @@ class Pong
     }
 
     //Vẽ 2 player
-    drawRect2(player)
+    drawRect2 (player)
     {
         this.context.fillStyle = "White";    
         this.context.fillRect(player.left, player.top,
@@ -136,9 +136,9 @@ class Pong
                                 // console.log(player.top) 
     }
     //Vẽ hình vuông bóng
-    drawRect(rect)
+    drawRect (rect)
     {
-        this.context.fillStyle = "green";    
+        this.context.fillStyle = "red";    
         this.context.fillRect(rect.postion.x, rect.postion.y,
                               rect.size.x, rect.size.y);   
                     
@@ -201,10 +201,20 @@ class Pong
             this.ball.vel.y = -this.ball.vel.y;
         }
         //Com: players[1] di chuyển
-        this.players[1].postion.y = this.ball.postion.y;
+        
+        this.players[1].postion.y = this.ball.postion.y
 
         //gọi hàm collide để xử lí va chạm
-        this.players.forEach(player => this.collide(player,this.ball) );
+        this.players.forEach (player => this.collide(player, this.ball));
+
+        //gọi hàm để player nằm tỏng khung hình
+        this.players.forEach(player => {
+            if (player.postion.y - player.size.y / 2 < 0) {
+              player.postion.y = player.size.y / 2;
+            } else if (player.postion.y + player.size.y / 2 > this.canvas.height) {
+              player.postion.y = this.canvas.height - player.size.y / 2;
+            }
+          });
 
         this.draw();
 
@@ -218,6 +228,10 @@ let pong = new Pong(canvas);
 canvas.addEventListener('mousemove', event =>
 {
     pong.players[0].postion.y = event.offsetY
+    if (pong.players[0].postion.y > pong.canvas.height)
+    {
+        pong.players[0] = pong.players[0] 
+    }
 });
 
 //Play start

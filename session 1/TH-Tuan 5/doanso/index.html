@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>[Bài tập] Game đoán số</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    let arrNumber = [];
+    for (let i = 0; i < 100; i++) {
+        arrNumber[i] = Math.floor(Math.random() * 99) + 1;
+    }
+    let socandoan = parseInt(prompt("Nhập số cần đoán"));
+    let max = 100;
+    let min = 0;
+    let win = 0;
+    for (let i = 0; i < 5; i++) {
+        if (i % 2 === 0) {
+            let numberMin = parseInt(prompt("Nhập vị trí để kiểm tra đến cuối mảng"));
+            min = numberMin;
+            let count = 0;
+            for (let i = numberMin; i < max; i++) {
+                if (arrNumber[i] === socandoan) {
+                    count++;
+                }
+            }
+            if (count === 0) {
+                alert("GameOver!");
+                break;
+            } else win++;
+        } else {
+            let numbermax = parseInt(prompt("Nhập vị trí để kiểm tra đến cuối mảng"));
+            max = numbermax;
+            let count = 0;
+            for (let i = numbermax; i < min; i++) {
+                if (arrNumber[i] !== socandoan) {
+                    count++;
+                }
+            }
+            if (count === 0) {
+                alert("GameOver!");
+                break;
+            } else win++;
+        }
+    }
+    if (win === 5) {
+        alert("Chúng mừng bạn đã thắng!");
+    }
+    for (let i = 0; i < 100; i++) {
+        document.write(arrNumber[i] + "        ");
+    }
+</script>
+
+</html>
