@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Đoán Số</title>
+</head>
+
+<body>
+    <script>
+        let array = [1, 15, 30, 24, 87, 5, 7, 8, 9, 89 , 50, 99, 100]
+        array.sort(function (a, b) {
+            return a - b;
+        });
+
+        function findNumber(arr, valu) {
+            let left = 0;
+            let right = arr.length - 1;
+            while (left <= right) {
+                let mid = (left + right) / 2;
+                let mid2 = Math.floor(mid);
+                console.log("vị trí hiện tại chưa làm tròn : " + mid);
+                console.log("vị trí hiện tại đã làm tròn: " + mid2);
+                console.log("Giá trị hiện tại: " + arr[mid2]);
+
+                if (arr[mid2] === valu) {
+                    return true;
+                }
+                else if (arr[mid2] > valu) { // tìm bên phải
+                    right = mid2 - 1;
+                  
+                } else { // tìm bên trái
+                    left = mid2 + 1;
+                    
+                }
+            }
+            return false;
+            
+        }
+
+        document.write(array + "<br>");
+        if (findNumber(array, 100)) {
+            document.write("Tìm thấy")
+        }
+        else document.write("Không tìm thấy")
+
+    </script>
+</body>
+
+</html>
