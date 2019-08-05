@@ -169,8 +169,6 @@ class Pong {
             this.ball.vel.y = -this.ball.vel.y;
         }
         //Com: players[1] di chuyển
-        // let level = 0.11;
-        // this.players[1].postion.y += (this.ball.postion.y - this.players[1].postion.y) * level;
         this.players[1].postion.y = this.ball.postion.y;
 
         //gọi hàm collide để xử lí va chạm
