@@ -47,7 +47,6 @@ class Player extends Rect {
         this.score = 0;
     }
 }
-
 class Pong {
     constructor(canvas) {
         this.canvas = canvas;
@@ -55,7 +54,6 @@ class Pong {
         this.context.height = window.innerHeight;
 
         this.ball = new Ball;
-
         this.players =
             [
                 new Player,
@@ -78,9 +76,7 @@ class Pong {
         callback();
 
         this.reset();
-
     }
-
     //Va chạm
     collide(player, ball) {
 
@@ -93,17 +89,13 @@ class Pong {
             ball.vel.len *= 1.05; // tăng tốc sau mỗi lần dội
         }
     }
-
     //vẽ nền
     draw() {
         this.context.fillStyle = "black";
         this.context.fillRect(0, 0, this.canvas.width, this.canvas.height);
-
         this.drawRect(this.ball);
         this.players.forEach(Player => this.drawRect2(Player))
-
         this.drawscore();
-
     }
 
     //Vẽ 2 player
@@ -118,7 +110,6 @@ class Pong {
         this.context.fillStyle = "red";
         this.context.fillRect(rect.postion.x, rect.postion.y,
             rect.size.x, rect.size.y);
-
     }
     //Vẽ điêm số trên canvas
     drawscore() {
@@ -169,9 +160,9 @@ class Pong {
             this.ball.vel.y = -this.ball.vel.y;
         }
         //Com: players[1] di chuyển
-        // let level = 0.11;
-        // this.players[1].postion.y += (this.ball.postion.y - this.players[1].postion.y) * level;
-        this.players[1].postion.y = this.ball.postion.y;
+        let level = 0.1;
+        this.players[1].postion.y += (this.ball.postion.y - this.players[1].postion.y) * level;
+        // this.players[1].postion.y = this.ball.postion.y;
 
         //gọi hàm collide để xử lí va chạm
         this.players.forEach(player => this.collide(player, this.ball));
@@ -184,9 +175,7 @@ class Pong {
                 player.postion.y = this.canvas.height - player.size.y / 2;
             }
         });
-
         this.draw();
-
     }
 }
 
@@ -197,7 +186,6 @@ let pong = new Pong(canvas);
 canvas.addEventListener('mousemove', event => {
     pong.players[0].postion.y = event.offsetY
 });
-
 //Play start
 canvas.addEventListener('click', event => {
     pong.start();
