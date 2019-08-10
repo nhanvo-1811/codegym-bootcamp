@@ -1,0 +1,11 @@
+E:\CodeGym\module 2\Bài Tập\BasicEx\BasicEx\bin\Debug\netcoreapp2.1\BasicEx.deps.json
+E:\CodeGym\module 2\Bài Tập\BasicEx\BasicEx\bin\Debug\netcoreapp2.1\BasicEx.runtimeconfig.json
+E:\CodeGym\module 2\Bài Tập\BasicEx\BasicEx\bin\Debug\netcoreapp2.1\BasicEx.runtimeconfig.dev.json
+E:\CodeGym\module 2\Bài Tập\BasicEx\BasicEx\bin\Debug\netcoreapp2.1\BasicEx.dll
+E:\CodeGym\module 2\Bài Tập\BasicEx\BasicEx\bin\Debug\netcoreapp2.1\BasicEx.pdb
+E:\CodeGym\module 2\Bài Tập\BasicEx\BasicEx\obj\Debug\netcoreapp2.1\BasicEx.csprojAssemblyReference.cache
+E:\CodeGym\module 2\Bài Tập\BasicEx\BasicEx\obj\Debug\netcoreapp2.1\BasicEx.csproj.CoreCompileInputs.cache
+E:\CodeGym\module 2\Bài Tập\BasicEx\BasicEx\obj\Debug\netcoreapp2.1\BasicEx.AssemblyInfoInputs.cache
+E:\CodeGym\module 2\Bài Tập\BasicEx\BasicEx\obj\Debug\netcoreapp2.1\BasicEx.AssemblyInfo.cs
+E:\CodeGym\module 2\Bài Tập\BasicEx\BasicEx\obj\Debug\netcoreapp2.1\BasicEx.dll
+E:\CodeGym\module 2\Bài Tập\BasicEx\BasicEx\obj\Debug\netcoreapp2.1\BasicEx.pdb

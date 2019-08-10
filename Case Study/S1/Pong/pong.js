@@ -6,8 +6,10 @@ class Vecto {
     get len() {
         //tính cạnh huyền 
         return Math.sqrt(this.x * this.x + this.y * this.y)
+
     }
     set len(value) {
+        //value: this.ball.vel.len = 200
         let fact = value / this.len;
         this.x *= fact;
         this.y *= fact;
@@ -25,6 +27,7 @@ class Rect {
     }
     get right() {
         return this.postion.x + this.size.x / 2;
+        console.log(this.postion.x)
     }
     get top() {
         return this.postion.y - this.size.y / 2;
@@ -62,24 +65,25 @@ class Pong {
 
         this.players[0].postion.x = 40;
         this.players[1].postion.x = this.canvas.width - 40
+        //đồng thời 
         this.players.forEach(player => {
             player.postion.y = this.canvas.height / 2;
         });
+
         let LastTime;
+        
         let callback = (millis) => {
-            if (LastTime) {
+            if (LastTime) {         
                 this.update((millis - LastTime) / 1000);
             }
             LastTime = millis;
             requestAnimationFrame(callback);
         };
         callback();
-
         this.reset();
     }
     //Va chạm
     collide(player, ball) {
-
         if (player.left < ball.right && player.right > ball.left
             && player.top < ball.bottom && player.bottom > ball.top) {
             ball.vel.x = - ball.vel.x;// bóng dội trả về theo hướng x
@@ -103,12 +107,11 @@ class Pong {
         this.context.fillStyle = "White";
         this.context.fillRect(player.left, player.top,
             player.size.x, player.size.y);
-        // console.log(player.top) 
     }
     //Vẽ hình vuông bóng
     drawRect(rect) {
         this.context.fillStyle = "red";
-        this.context.fillRect(rect.postion.x, rect.postion.y,
+        this.context.fillRect(rect.left, rect.top,
             rect.size.x, rect.size.y);
     }
     //Vẽ điêm số trên canvas
@@ -132,7 +135,9 @@ class Pong {
 
     start() {
         if (this.ball.vel.x === 0 && this.ball.vel.y === 0) {
+            //random > 0.5 trả về 1 bên trái ngc lại bên phải 
             this.ball.vel.x = 300 * (Math.random() > 0.5 ? 1 : -1);
+            //random *2 - 1 nếu > 0 bên dưới < 0 bên trên
             this.ball.vel.y = 300 * (Math.random() * 2 - 1);
             this.ball.vel.len = 200;
         }
@@ -143,10 +148,10 @@ class Pong {
         this.ball.postion.x += this.ball.vel.x * dt;
         this.ball.postion.y += this.ball.vel.y * dt;
 
-        //bóng va chạm tường
+        //tinh điểm lúc bóng va chạm tường
         if (this.ball.left < 0 || this.ball.right > this.canvas.width) {
             let playerId;
-            if (this.ball.vel.x < 0) {
+            if (this.ball.left < 0) {
                 playerId = 1;
             } else {
                 playerId = 0;
@@ -167,7 +172,7 @@ class Pong {
         //gọi hàm collide để xử lí va chạm
         this.players.forEach(player => this.collide(player, this.ball));
 
-        //gọi hàm để player nằm trong khung hình
+        //gọi hàm để player nằm trong khung hình 
         this.players.forEach(player => {
             if (player.postion.y - player.size.y / 2 < 0) {
                 player.postion.y = player.size.y / 2;
