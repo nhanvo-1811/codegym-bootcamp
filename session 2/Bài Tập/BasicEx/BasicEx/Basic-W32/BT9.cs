@@ -8,19 +8,19 @@ namespace BasicEx
     {
         static void Main()
         {
-            double a, b, c, d;
+            int a, b, c, d;
          
             Console.Write("Enter a: ");
-            a = double.Parse(Console.ReadLine());
+            a = int.Parse(Console.ReadLine());
 
             Console.Write("Enter b: ");
-            b = double.Parse(Console.ReadLine());
+            b = int.Parse(Console.ReadLine());
 
             Console.Write("Enter c: ");
-            c = double.Parse(Console.ReadLine());
+            c = int.Parse(Console.ReadLine());
 
             Console.Write("Enter d: ");
-            d = double.Parse(Console.ReadLine());
+            d = int.Parse(Console.ReadLine());
 
             double result = (a + b + c + d) / 4;
             Console.Write("The average of {0}, {1}, {2}, {3} is {4}", a, b, c, d, result);
