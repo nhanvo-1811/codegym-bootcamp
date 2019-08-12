@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace BasicEx
+namespace BasicEx.OOP
 {
-    class testArray
+    class BT1
     {
     }
 }

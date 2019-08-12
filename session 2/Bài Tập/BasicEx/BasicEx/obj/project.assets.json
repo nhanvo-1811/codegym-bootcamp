@@ -694,11 +694,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\CodeGym\\module 2\\Bài Tập\\BasicEx\\BasicEx\\BasicEx.csproj",
+      "projectUniqueName": "E:\\CodeGym\\module 1\\codegym-bootcamp\\session 2\\Bài Tập\\BasicEx\\BasicEx\\BasicEx.csproj",
       "projectName": "BasicEx",
-      "projectPath": "E:\\CodeGym\\module 2\\Bài Tập\\BasicEx\\BasicEx\\BasicEx.csproj",
+      "projectPath": "E:\\CodeGym\\module 1\\codegym-bootcamp\\session 2\\Bài Tập\\BasicEx\\BasicEx\\BasicEx.csproj",
       "packagesPath": "C:\\Users\\Errors\\.nuget\\packages\\",
-      "outputPath": "E:\\CodeGym\\module 2\\Bài Tập\\BasicEx\\BasicEx\\obj\\",
+      "outputPath": "E:\\CodeGym\\module 1\\codegym-bootcamp\\session 2\\Bài Tập\\BasicEx\\BasicEx\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
