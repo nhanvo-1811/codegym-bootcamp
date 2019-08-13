@@ -17,10 +17,11 @@ namespace BasicEx.Basic_W33
             // var ctr = 0;
             for (var i = 0; i < str.Length - 1; i++)
             {
-                int ctr = 0;
-                if (str[i].Equals('w')) ctr++;
-                if (str.Substring(i, 2).Equals("ww") && ctr > 2)
-                    return true;
+                //int ctr = 0;
+                //if (str[i].Equals('w')) ctr++;
+                //if (str.Substring(i, 2).Equals("ww") && ctr > 2)
+                    if (str[i].Equals('w') && (str.Substring(i+1, 2).Equals("ww")))
+                        return true;
             }
             return false;
         }
