@@ -3,7 +3,7 @@
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>netcoreapp2.1</TargetFramework>
-    <StartupObject>BasicEx.OOP.BT1</StartupObject>
+    <StartupObject>Example.Exam4</StartupObject>
   </PropertyGroup>
 
 </Project>
