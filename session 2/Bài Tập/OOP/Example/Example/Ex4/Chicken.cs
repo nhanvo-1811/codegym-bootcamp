@@ -6,6 +6,7 @@ namespace Example.Ex4
 {
     public class Chicken : Animal, IEdible
     {
+      
         public override string MakeSound()
         {
             return "chip chip";
@@ -16,5 +17,12 @@ namespace Example.Ex4
         {
             return "rice";
         }
+       
+        //public override int are()
+        //{
+        //    return Height * Weight;
+
+        //}
+
     }
 }
