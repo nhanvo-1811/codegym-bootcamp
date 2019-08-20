@@ -94,8 +94,8 @@ namespace Example.BT1_Java
         {
             int IComparer.Compare(Object a, Object b)
             {
-                PhoneItem a1 = a as PhoneItem;
-                PhoneItem b1 = b as PhoneItem;
+                PhoneItem a1 = (PhoneItem)a;
+                PhoneItem b1 = (PhoneItem)b;
                 return ((new CaseInsensitiveComparer()).Compare(a1.name, b1.name));
             }
         }
