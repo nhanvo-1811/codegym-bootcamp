@@ -14,7 +14,6 @@ namespace Example.BT_Java
         {
             InitMenu(); 
         }
-
         public static void InitMenu()
         {
             int option = 0;
