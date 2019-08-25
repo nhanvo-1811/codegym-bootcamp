@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Example.Ex1
 {
-    class Teacher : Person
+    public class Teacher : Person
     {
        
         public void Explain()

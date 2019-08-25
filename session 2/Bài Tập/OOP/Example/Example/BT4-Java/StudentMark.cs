@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Text;
-using Example.BT4_Java.Models;
+using Example.BT4_Java;
 namespace Example.BT4_Java
 {
     public class StudentMark : IStudentMark

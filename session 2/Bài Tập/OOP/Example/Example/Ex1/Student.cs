@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Example.Ex1
 {
-    class Student : Person
+    public class Student : Person
     {
   
         public void GoToClasses()

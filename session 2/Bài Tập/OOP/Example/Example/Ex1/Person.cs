@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Example.Ex1
 {
-    class Person
+    public class Person
     {
         private int Age;
         public void SetAge(int n)

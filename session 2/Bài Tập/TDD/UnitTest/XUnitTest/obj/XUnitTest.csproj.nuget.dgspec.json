@@ -1,0 +1,126 @@
+{
+  "format": 1,
+  "restore": {
+    "E:\\CodeGym\\module 1\\codegym-bootcamp\\session 2\\Bài Tập\\TDD\\UnitTest\\XUnitTest\\XUnitTest.csproj": {}
+  },
+  "projects": {
+    "E:\\CodeGym\\module 1\\codegym-bootcamp\\session 2\\Bài Tập\\TDD\\UnitTest\\UnitTest\\UnitTest.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\CodeGym\\module 1\\codegym-bootcamp\\session 2\\Bài Tập\\TDD\\UnitTest\\UnitTest\\UnitTest.csproj",
+        "projectName": "UnitTest",
+        "projectPath": "E:\\CodeGym\\module 1\\codegym-bootcamp\\session 2\\Bài Tập\\TDD\\UnitTest\\UnitTest\\UnitTest.csproj",
+        "packagesPath": "C:\\Users\\Errors\\.nuget\\packages\\",
+        "outputPath": "E:\\CodeGym\\module 1\\codegym-bootcamp\\session 2\\Bài Tập\\TDD\\UnitTest\\UnitTest\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Errors\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp2.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp2.1": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp2.1": {
+          "dependencies": {
+            "Microsoft.NETCore.App": {
+              "target": "Package",
+              "version": "[2.1.0, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461"
+          ],
+          "assetTargetFallback": true,
+          "warn": true
+        }
+      }
+    },
+    "E:\\CodeGym\\module 1\\codegym-bootcamp\\session 2\\Bài Tập\\TDD\\UnitTest\\XUnitTest\\XUnitTest.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\CodeGym\\module 1\\codegym-bootcamp\\session 2\\Bài Tập\\TDD\\UnitTest\\XUnitTest\\XUnitTest.csproj",
+        "projectName": "XUnitTest",
+        "projectPath": "E:\\CodeGym\\module 1\\codegym-bootcamp\\session 2\\Bài Tập\\TDD\\UnitTest\\XUnitTest\\XUnitTest.csproj",
+        "packagesPath": "C:\\Users\\Errors\\.nuget\\packages\\",
+        "outputPath": "E:\\CodeGym\\module 1\\codegym-bootcamp\\session 2\\Bài Tập\\TDD\\UnitTest\\XUnitTest\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Errors\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp2.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp2.1": {
+            "projectReferences": {
+              "E:\\CodeGym\\module 1\\codegym-bootcamp\\session 2\\Bài Tập\\TDD\\UnitTest\\UnitTest\\UnitTest.csproj": {
+                "projectPath": "E:\\CodeGym\\module 1\\codegym-bootcamp\\session 2\\Bài Tập\\TDD\\UnitTest\\UnitTest\\UnitTest.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp2.1": {
+          "dependencies": {
+            "Microsoft.NET.Test.Sdk": {
+              "target": "Package",
+              "version": "[15.9.0, )"
+            },
+            "Microsoft.NETCore.App": {
+              "target": "Package",
+              "version": "[2.1.0, )",
+              "autoReferenced": true
+            },
+            "xunit": {
+              "target": "Package",
+              "version": "[2.4.0, )"
+            },
+            "xunit.runner.visualstudio": {
+              "target": "Package",
+              "version": "[2.4.0, )"
+            }
+          },
+          "imports": [
+            "net461"
+          ],
+          "assetTargetFallback": true,
+          "warn": true
+        }
+      }
+    }
+  }
+}

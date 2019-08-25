@@ -78,13 +78,20 @@ namespace Example.BT4_Java
             student.Class= Console.ReadLine();
 
             Console.WriteLine("Sermester");
-            student.Semester = int.Parse(Console.ReadLine());
+            if (int.TryParse(Console.ReadLine(), out var number))
+            {
+                student.Semester = number;
+            };
 
             Console.WriteLine("Input SubjectMark: ");
             for (int i = 0; i < student.subjectMark.Length; i++)
             {
                 Console.WriteLine("Input rate {0}", i + 1);
-                student.subjectMark[i] = int.Parse(Console.ReadLine());
+                if (int.TryParse(Console.ReadLine(), out var number2))
+                {
+                    student.subjectMark[i] = number2;
+                };
+                // = int.Parse(Console.ReadLine());
             }
            // student.AveCal();
             markList.Add(student);
