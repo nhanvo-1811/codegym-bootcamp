@@ -45,7 +45,7 @@ namespace BasicEx.Cautruc_Giaithuat
             //int[] D = { 5, 7, 9, 8, 4, 8, 6, 5, 9};
             //Console.WriteLine(string.Join(",", D));
             //Console.WriteLine("----------------------");
-            
+
             //    int left = 0;
             //    int right = D.Length - 1;
 
@@ -56,13 +56,20 @@ namespace BasicEx.Cautruc_Giaithuat
             // BinarySearch 
 
             int[] F = { 5, 7, 9, 10, 4, 8, 6, 5, 9 };
-            Console.WriteLine(string.Join(",", F));
+            Show(F);
+            Console.WriteLine();
             Console.WriteLine("----------------------");
-            BubbleSort(F);
-            Console.WriteLine(string.Join(",", F));
-            Console.WriteLine("number position to search for: {0}", string.Join(",", binarySearch(F,8)));
-        }
 
+            BubbleSort(F);
+            Show(F);
+
+            Console.WriteLine();
+            Console.WriteLine("Input number search: ");
+            var num = int.Parse(Console.ReadLine());
+
+            Console.WriteLine("number position to search for: {0}", string.Join(",", binarySearch(F, num)));
+        }
+        #region 
         //public static long GiaiThua(int n)
         //{
         //    if (n == 1 || n==0)
@@ -91,7 +98,9 @@ namespace BasicEx.Cautruc_Giaithuat
         //        return 0;
         //    return SumArr(A, n - 1) + A[n - 1];
         //}
+        #endregion
 
+        #region SelectionSort
         //public static void SelectionSort(int[] A)
         //{
         //    for (int i = 0; i < A.Length - 1; i++)
@@ -110,6 +119,9 @@ namespace BasicEx.Cautruc_Giaithuat
 
         //    }
         //}
+        #endregion
+
+        #region InsertSort
         //public static void InsertionSort(int[] A)
         //{
         //    for (int i = 1; i < A.Length; i++)
@@ -124,6 +136,7 @@ namespace BasicEx.Cautruc_Giaithuat
         //        A[index] = value;
         //    }
         //}
+        #endregion
         public static void BubbleSort(int[] A)
         {
             for (int i = 0; i < A.Length - 1; i++)
@@ -132,16 +145,19 @@ namespace BasicEx.Cautruc_Giaithuat
                 {
                     if (A[j] > A[j + 1])
                     {
-                        var temp = A[j];
-                        A[j] = A[j + 1];
-                        A[j + 1] = temp;
+                        swap(ref A[j], ref A[j + 1]);
+                        #region swap 
+                        //var temp = A[j];
+                        //A[j] = A[j + 1];
+                        //A[j + 1] = temp;
+                        #endregion 
                     }
 
                 }
             }
 
         }
-
+        #region QuickSort
         //  public static void QuickSort(int[] A, int left, int right)
         //{
         //    int middle = left + (right - left) / 2;
@@ -161,22 +177,20 @@ namespace BasicEx.Cautruc_Giaithuat
         //        }
         //        if (i <= j)
         //        {
-        //            int temp = A[i];
-        //            A[i] = A[j];
-        //            A[j] = temp;
+        //            swap(ref A[i], ref A[j])
         //            i++;
         //            j--;
         //        }
         //    }
-
         //    if (left < j)
         //        QuickSort(A, left, j);
         //    if (right > i)
         //        QuickSort(A, i, right);
         //}
+        #endregion
 
 
-        public static int binarySearch(int [] A, int n)
+        public static int binarySearch(int[] A, int n)
         {
             int min = 0;
             int max = A.Length - 1;
@@ -201,7 +215,22 @@ namespace BasicEx.Cautruc_Giaithuat
 
             return -1;
         }
-       
+        public static void Show(int[] Arr)
+        {
+            foreach (int item in Arr)
+            {
+                Console.Write(" {0} ", item);
+            }
+
+        }
+
+        public static void swap(ref int a, ref int b)
+        {
+            int temp = a;
+            a = b;
+            b = temp;
+        }
+
     }
 }
 
