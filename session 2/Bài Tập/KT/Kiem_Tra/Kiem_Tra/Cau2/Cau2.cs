@@ -72,31 +72,39 @@ namespace Kiem_Tra.Cau2
                     }
                 case 4:
                     {
-                        SelectionSort(Arr);
-                        Console.WriteLine("Find array .....");
-                        Console.WriteLine("Input number ");
-                        int n;
-                        do
+                        if (IsIncreaseArray(Arr))
                         {
-                            int.TryParse(Console.ReadLine(), out n);
+                            Console.WriteLine("Find array .....");
                             Console.WriteLine("Input number ");
-                        }
-                        while (n <= 0);
-                        if (Find(Arr, n) == -1)
+                            int n;
+                            do
+                            {
+                                int.TryParse(Console.ReadLine(), out n);
+                                Console.WriteLine("Input number ");
+                            }
+                            while (n <= 0);
+                            if (Find(Arr, n) == -1)
+                            {
+                                Console.WriteLine("Not find");
+                                break;
+                            }
+                            else
+                            {
+                                Console.WriteLine("Number position to search for: {0}", string.Join(",", Find(Arr, n)));
+                            }
+                        }else
                         {
-                            Console.WriteLine("Not find");
-                            break;
+                            Console.WriteLine("Chuc nang khong kha dung moi su dung chuc nang 3 truoc ");
+                            InitMenu();
+                                
                         }
-                        else
-                        {
-                            Console.WriteLine("Number position to search for: {0}", string.Join(",", Find(Arr, n)));
-                        }
+                       
                        
                         break;
                     }
                 case 5:
                     {
-                        Console.WriteLine("Exit .....");
+                        Environment.Exit(Environment.ExitCode);
                         break;
                     }
             }

@@ -1,0 +1,13 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+    <StartupObject>KiemTra_Lan2.Cau1.Cau1</StartupObject>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Cau2\" />
+  </ItemGroup>
+
+</Project>

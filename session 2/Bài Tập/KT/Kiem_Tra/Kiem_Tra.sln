@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29209.62
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kiem_Tra", "Kiem_Tra\Kiem_Tra.csproj", "{A5908926-563B-49B3-AD61-61F75FB8E059}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Kiem_Tra", "Kiem_Tra\Kiem_Tra.csproj", "{A5908926-563B-49B3-AD61-61F75FB8E059}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KiemTra_Lan2", "KiemTra_Lan2\KiemTra_Lan2.csproj", "{4076118B-BCB5-4731-A4B7-D457CE2D639C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{A5908926-563B-49B3-AD61-61F75FB8E059}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A5908926-563B-49B3-AD61-61F75FB8E059}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A5908926-563B-49B3-AD61-61F75FB8E059}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4076118B-BCB5-4731-A4B7-D457CE2D639C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4076118B-BCB5-4731-A4B7-D457CE2D639C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4076118B-BCB5-4731-A4B7-D457CE2D639C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4076118B-BCB5-4731-A4B7-D457CE2D639C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

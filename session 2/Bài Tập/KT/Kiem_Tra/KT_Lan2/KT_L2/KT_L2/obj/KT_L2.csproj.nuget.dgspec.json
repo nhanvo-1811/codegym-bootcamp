@@ -1,0 +1,59 @@
+{
+  "format": 1,
+  "restore": {
+    "E:\\CodeGym\\module 1\\codegym-bootcamp\\session 2\\Bài Tập\\KT\\Kiem_Tra\\KT_Lan2\\KT_L2\\KT_L2\\KT_L2.csproj": {}
+  },
+  "projects": {
+    "E:\\CodeGym\\module 1\\codegym-bootcamp\\session 2\\Bài Tập\\KT\\Kiem_Tra\\KT_Lan2\\KT_L2\\KT_L2\\KT_L2.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\CodeGym\\module 1\\codegym-bootcamp\\session 2\\Bài Tập\\KT\\Kiem_Tra\\KT_Lan2\\KT_L2\\KT_L2\\KT_L2.csproj",
+        "projectName": "KT_L2",
+        "projectPath": "E:\\CodeGym\\module 1\\codegym-bootcamp\\session 2\\Bài Tập\\KT\\Kiem_Tra\\KT_Lan2\\KT_L2\\KT_L2\\KT_L2.csproj",
+        "packagesPath": "C:\\Users\\Errors\\.nuget\\packages\\",
+        "outputPath": "E:\\CodeGym\\module 1\\codegym-bootcamp\\session 2\\Bài Tập\\KT\\Kiem_Tra\\KT_Lan2\\KT_L2\\KT_L2\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Errors\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp2.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp2.1": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp2.1": {
+          "dependencies": {
+            "Microsoft.NETCore.App": {
+              "target": "Package",
+              "version": "[2.1.0, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461"
+          ],
+          "assetTargetFallback": true,
+          "warn": true
+        }
+      }
+    }
+  }
+}

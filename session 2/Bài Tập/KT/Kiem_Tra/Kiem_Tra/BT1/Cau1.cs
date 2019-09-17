@@ -34,16 +34,18 @@ namespace Kiem_Tra.BT1
             {
                 for (int j = 0; j < column; j++)
                 {
+                    var number = 0;
+                    var kt = false;
                     do
                     {
                         Console.Write("Input Array[{0}, {1}]: ", i, j);
-                        if (int.TryParse(Console.ReadLine(), out var number))
+                        if (int.TryParse(Console.ReadLine(), out number))
                         {
                             array[i, j] = number;
-                            break;
+                            kt = true; ;
                         }
                     }
-                    while (true);
+                    while (!kt);
                 }
             }
             return array;
@@ -59,6 +61,7 @@ namespace Kiem_Tra.BT1
         }
         public static void ShowMaxRow(int[,] array)
         {
+       
             int maxRow = 0;
             for (int i = 1; i < array.GetLength(0); i++)
             {
