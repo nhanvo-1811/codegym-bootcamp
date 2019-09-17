@@ -1,0 +1,1 @@
+declare @date date = getdate();

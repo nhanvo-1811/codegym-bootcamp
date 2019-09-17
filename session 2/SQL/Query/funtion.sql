@@ -1,0 +1,36 @@
+ALTER FUNCTION fn_SLNhanVien
+(
+	@NamSinh int,
+	@LuongCB MONEY
+)
+RETURNS INT 
+AS
+BEGIN 
+	DECLARE @SL INT=0;
+	SET @SL =(SELECT COUNT(*) 
+	FROM dbo.NHANVIEN	
+	WHERE YEAR(NGAYSINH) = @NamSinh AND LUONGCOBAN >=@LuongCB)
+	RETURN @SL
+END
+
+----
+SELECT dbo.fn_SLNhanVien (2000, 50000000.0000) 
+
+CREATE FUNCTION fn_NhanVien
+(
+	@NamSinh int,
+	@LuongCB MONEY
+)
+RETURNS @NV TABLE (Manhanvien varchar(20), ten nvarchar(20))
+AS
+
+BEGIN 
+	INSERT INTO @NV
+	SELECT manhanvien, ten 
+	FROM dbo.NHANVIEN
+	WHERE YEAR(NGAYSINH) = @NamSinh AND LUONGCOBAN >=@LuongCB
+	RETURN
+END
+
+SELECT * FROM dbo.fn_NhanVien (2000, 50000000.0000) 
+
