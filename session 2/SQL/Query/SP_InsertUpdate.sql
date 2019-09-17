@@ -1,0 +1,25 @@
+ALTER PROC SP_UpdateInsert
+(
+	@MaLH NVARCHAR(30),
+	@TenLH NVARCHAR(30)
+)
+AS
+BEGIN
+	IF(EXISTS(SELECT * FROM dbo.LOAIHANG WHERE MALOAIHANG=@MaLH))
+	BEGIN
+		UPDATE dbo.LOAIHANG
+		SET TENLOAIHANG = @TenLH
+		WHERE MALOAIHANG = @MaLH
+    END
+    ELSE 
+	BEGIN
+		INSERT INTO dbo.LOAIHANG
+		        --( [MALOAIHANG], [TENLOAIHANG] )
+		VALUES  ( 
+		          N''+@MaLH+'',  
+				  N''+@TenLH+''
+		          )
+	END
+
+END
+EXEC SP_UpdateInsert 'HOA8','1'
