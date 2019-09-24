@@ -17,5 +17,7 @@ namespace EmployeeList.Models
         public DbSet<tblSkill> tblSkills { get; set; }
         public DbSet<tblEmployee> tblEmployees { get; set; }
         public DbSet<EmployeeList.Models.EmployeeViewModel> EmployeeViewModel { get; set; }
+        public DbSet<EmployeeList.Models.EmployeeCreateModel> EmployeeCreateModel { get; set; }
+        public DbSet<EmployeeList.Models.EmployeeEditModel> EmployeeEditModel { get; set; }
     }
 }
