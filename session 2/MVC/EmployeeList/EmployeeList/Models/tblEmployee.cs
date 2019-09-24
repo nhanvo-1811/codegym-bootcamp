@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
+using Microsoft.AspNetCore.Http;
 
 namespace EmployeeList.Models
 {
@@ -22,5 +23,7 @@ namespace EmployeeList.Models
 
         [Display(Name = "Years of Experience")]
         public int YearsExperience { get; set; }
+
+       // public string img { get; set; }
     }
 }

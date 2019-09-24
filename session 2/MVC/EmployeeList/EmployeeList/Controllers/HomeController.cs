@@ -28,6 +28,7 @@ namespace EmployeeList.Controllers
                                 PhoneNumber = e.PhoneNumber,
                                 Skill = s.Title,
                                 YearsExperience = e.YearsExperience
+                                
                             }).ToList();
             IList<EmployeeViewModel> emplst = _emplst;
             return View(emplst);
@@ -35,41 +36,44 @@ namespace EmployeeList.Controllers
         [HttpGet]
         public IActionResult Create()
         {
-            //  TempData["Message"] = "Employee has been added successfully.";
+            //TempData["Errors"] = "Employee has been added successfully.";
             ViewBag.Skills = GetSkills();
-            return View();
+            return View();                                                          
         }
 
         [HttpPost]
         public IActionResult Create(EmployeeCreateModel model)
         {
+
             var employee = new tblEmployee()
             {
                 EmployeeID = model.EmployeeID,
                 EmployeeName = model.EmployeeName,
                 PhoneNumber = model.PhoneNumber,
                 SkillID = model.SkillID,
-                YearsExperience = model.YearsExperience
+                YearsExperience = model.YearsExperience,
+              //  img = model.Photo
+             
             };
             _dbContext.tblEmployees.Add(employee);
             try
             {
                 if (_dbContext.SaveChanges() > 0)
                 {
-                    TempData["Message"] = "Employee has been added successfully.";
+                    TempData["Message"] = model.EmployeeName + "added successfully.";
                 }
                 else
                 {
-                    TempData["Message"] = "Something went wrong, please contact administrator.";
+                    TempData["Errors"] = "Something went wrong, please contact administrator.";
                 }
             }
             catch (Exception ex)
             {
-                TempData["Message"] = ex.Message;
+                TempData["Errors"] = ex.Message;
             }
 
             ViewBag.Skills = GetSkills();
-            return View(new EmployeeCreateModel());
+            return RedirectToAction("Create");  
         }
         [HttpGet]
         public IActionResult Delete(int id)
