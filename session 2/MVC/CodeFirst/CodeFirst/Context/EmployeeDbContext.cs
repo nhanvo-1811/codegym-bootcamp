@@ -1,14 +1,15 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using CodeFirst.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace CodeFirst.Context
 {
     public class EmployeeDbContext : DbContext
     {
-        public EmployeeDbContext(DbContextOptions options) : base(options)
+        public EmployeeDbContext(DbContextOptions<EmployeeDbContext> options) : base(options)
         {
         }
 
-        DbSet<Employee> Employees { get; set; }
+        public DbSet<Employee> Employees { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -17,5 +18,9 @@ namespace CodeFirst.Context
                 new Employee() { EmployeeId = 2, Name = "Chris", Designation = "Manager", Address = "New York", CompanyName = "ABC Inc", Salary = 50000 },
                 new Employee() { EmployeeId = 3, Name = "Mukesh", Designation = "Consultant", Address = "New Delhi", CompanyName = "XYZ Inc", Salary = 20000 });
         }
+
+        public DbSet<CodeFirst.Models.EmployeeViewModel> EmployeeViewModel { get; set; }
+
+        public DbSet<CodeFirst.Models.EmployeeCreateModel> EmployeeCreateModel { get; set; }
     }
 }

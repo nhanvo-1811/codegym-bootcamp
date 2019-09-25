@@ -24,6 +24,6 @@ namespace EmployeeList.Models
         [Display(Name = "Years of Experience")]
         public int YearsExperience { get; set; }
 
-       // public string img { get; set; }
+        public string img { get; set; }
     }
 }

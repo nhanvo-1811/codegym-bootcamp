@@ -5,14 +5,17 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using EmployeeList.Models;
+using Microsoft.AspNetCore.Hosting;
+using System.IO;
 
 namespace EmployeeList.Controllers
 {
     public class HomeController : Controller
     {
         private readonly EmployeeContext _dbContext;
+        private readonly IHostingEnvironment hostingEnvironment;
 
-        public HomeController(EmployeeContext dbContext)
+        public HomeController(EmployeeContext dbContext, IHostingEnvironment hostingEnvironment)
         {
             _dbContext = dbContext;
         }
@@ -27,8 +30,9 @@ namespace EmployeeList.Controllers
                                 EmployeeName = e.EmployeeName,
                                 PhoneNumber = e.PhoneNumber,
                                 Skill = s.Title,
-                                YearsExperience = e.YearsExperience
-                                
+                                YearsExperience = e.YearsExperience,
+                                img = e.img
+
                             }).ToList();
             IList<EmployeeViewModel> emplst = _emplst;
             return View(emplst);
@@ -38,42 +42,53 @@ namespace EmployeeList.Controllers
         {
             //TempData["Errors"] = "Employee has been added successfully.";
             ViewBag.Skills = GetSkills();
-            return View();                                                          
+            return View();
         }
 
         [HttpPost]
         public IActionResult Create(EmployeeCreateModel model)
         {
-
-            var employee = new tblEmployee()
+            if (ModelState.IsValid)
             {
-                EmployeeID = model.EmployeeID,
-                EmployeeName = model.EmployeeName,
-                PhoneNumber = model.PhoneNumber,
-                SkillID = model.SkillID,
-                YearsExperience = model.YearsExperience,
-              //  img = model.Photo
-             
-            };
-            _dbContext.tblEmployees.Add(employee);
-            try
-            {
-                if (_dbContext.SaveChanges() > 0)
+                string uniqueFileName = null;
+                if (model.Photo != null)
                 {
-                    TempData["Message"] = model.EmployeeName + "added successfully.";
+                    string uploadsFolder = Path.Combine(hostingEnvironment.WebRootPath, "images");
+                    uniqueFileName = Guid.NewGuid().ToString() + "_" + model.Photo.FileName;
+                    string filePath = Path.Combine(uploadsFolder, uniqueFileName);
+                    model.Photo.CopyTo(new FileStream(filePath, FileMode.Create));
                 }
-                else
+                var employee = new tblEmployee()
                 {
-                    TempData["Errors"] = "Something went wrong, please contact administrator.";
+                    EmployeeID = model.EmployeeID,
+                    EmployeeName = model.EmployeeName,
+                    PhoneNumber = model.PhoneNumber,
+                    SkillID = model.SkillID,
+                    YearsExperience = model.YearsExperience,
+                    img = uniqueFileName
+                };
+                _dbContext.tblEmployees.Add(employee);
+                try
+                {
+                    if (_dbContext.SaveChanges() > 0)
+                    {
+                        TempData["Message"] = model.EmployeeName + "added successfully.";
+                    }
+                    else
+                    {
+                        TempData["Errors"] = "Something went wrong, please contact administrator.";
+                    }
                 }
-            }
-            catch (Exception ex)
-            {
-                TempData["Errors"] = ex.Message;
-            }
+                catch (Exception ex)
+                {
+                    TempData["Errors"] = ex.Message;
+                }
 
-            ViewBag.Skills = GetSkills();
-            return RedirectToAction("Create");  
+                ViewBag.Skills = GetSkills();
+                return RedirectToAction("Details", new { id = employee.EmployeeID });
+            }
+            return View();
+
         }
         [HttpGet]
         public IActionResult Delete(int id)
@@ -107,7 +122,7 @@ namespace EmployeeList.Controllers
             var employeeEdit = new EmployeeEditModel()
             {
                 EmployeeID = _employees.EmployeeID,
-                EmployeeName = _employees.EmployeeName, 
+                EmployeeName = _employees.EmployeeName,
                 PhoneNumber = _employees.PhoneNumber,
                 SkillID = _employees.SkillID,
                 YearsExperience = _employees.YearsExperience
