@@ -32,3 +32,4 @@ E:\CodeGym\module 1\codegym-bootcamp\session 2\MVC\CodeFirst\CodeFirst\obj\Debug
 E:\CodeGym\module 1\codegym-bootcamp\session 2\MVC\CodeFirst\CodeFirst\obj\Debug\netcoreapp2.2\CodeFirst.csproj.CopyComplete
 E:\CodeGym\module 1\codegym-bootcamp\session 2\MVC\CodeFirst\CodeFirst\obj\Debug\netcoreapp2.2\Razor\Views\Home\Create.g.cshtml.cs
 E:\CodeGym\module 1\codegym-bootcamp\session 2\MVC\CodeFirst\CodeFirst\obj\Debug\netcoreapp2.2\Razor\Views\Home\Details.g.cshtml.cs
+E:\CodeGym\module 1\codegym-bootcamp\session 2\MVC\CodeFirst\CodeFirst\obj\Debug\netcoreapp2.2\Razor\Views\Home\Edit.g.cshtml.cs

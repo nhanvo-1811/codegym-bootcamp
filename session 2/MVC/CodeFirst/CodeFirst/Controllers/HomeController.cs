@@ -101,7 +101,39 @@ namespace CodeFirst.Controllers
             return View(_employ);
         }
 
+        [HttpGet]
+        public IActionResult Edit(int id)
+        {
+            var _employees = _dbContext.Employees.Where(e => e.EmployeeId == id).FirstOrDefault();
+            var employeeEdit = new EmployeeEditModel()
+            {
+                EmployeeId = _employees.EmployeeId,
+                Name = _employees.Name,
+                Address = _employees.Address,
+                CompanyName = _employees.CompanyName,
+                Designation = _employees.Designation,
+                Salary = _employees.Salary
+            };
+            return View(employeeEdit);
+        }
+
+        [HttpPost]
+        public IActionResult Edit(EmployeeEditModel model)
+        {
+            var employee = _dbContext.Employees.Find(model.EmployeeId);
+            employee.Name = model.Name;
+            employee.Address = model.Address;
+            employee.CompanyName = model.CompanyName;
+            employee.Designation = model.Designation;
+            employee.Salary = model.Salary;
+            _dbContext.SaveChanges();
+            return RedirectToAction("Index");
+        }
+
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
+
+
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });

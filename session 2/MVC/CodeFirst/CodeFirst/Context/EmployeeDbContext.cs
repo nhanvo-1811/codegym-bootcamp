@@ -22,5 +22,7 @@ namespace CodeFirst.Context
         public DbSet<CodeFirst.Models.EmployeeViewModel> EmployeeViewModel { get; set; }
 
         public DbSet<CodeFirst.Models.EmployeeCreateModel> EmployeeCreateModel { get; set; }
+
+        public DbSet<CodeFirst.Models.EmployeeEditModel> EmployeeEditModel { get; set; }
     }
 }
