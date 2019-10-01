@@ -13,7 +13,6 @@ namespace DapperGroupMeeting.DAL
     {
         public GroupMeetingService() : base()
         {
-
         }
 
         public  IEnumerable<GroupMeeting> GetGroupMeetings()
@@ -60,10 +59,11 @@ namespace DapperGroupMeeting.DAL
 
                 DynamicParameters parameters = new DynamicParameters();
                 parameters.Add("@ProjectName", groupMeeting.ProjectName);
-                parameters.Add("@GroupMeetingLeadName", groupMeeting.GroupMeetingLeadName);
-                parameters.Add("@TeamLeadName", groupMeeting.TeamLeadName);
+                parameters.Add("@GroupMeetingLeadName", groupMeeting.GLeadName);
+                parameters.Add("@TeamLeadName", groupMeeting.TLeadName);
                 parameters.Add("@Description", groupMeeting.Description);
                 parameters.Add("@GroupMeetingDate", groupMeeting.GroupMeetingDate);
+                parameters.Add("@RoomID", groupMeeting.RoomID);
 
                 rowAffected = con.Execute("InsertGroupMeeting", parameters, commandType: CommandType.StoredProcedure);
             }
@@ -71,7 +71,7 @@ namespace DapperGroupMeeting.DAL
             return rowAffected;
         }
 
-        public int UpdateGroupMeeting(GroupMeetingEdit groupMeeting)
+        public int UpdateGroupMeeting(GroupMeeting groupMeeting)
         {
             int rowAffected = 0;
 
@@ -83,10 +83,11 @@ namespace DapperGroupMeeting.DAL
                 DynamicParameters parameters = new DynamicParameters();
                 parameters.Add("@Id", groupMeeting.Id);
                 parameters.Add("@ProjectName", groupMeeting.ProjectName);
-                parameters.Add("@GroupMeetingLeadName", groupMeeting.GroupMeetingLeadName);
-                parameters.Add("@TeamLeadName", groupMeeting.TeamLeadName);
+                parameters.Add("@GroupMeetingLeadName", groupMeeting.GLeadName);
+                parameters.Add("@TeamLeadName", groupMeeting.TLeadName);
                 parameters.Add("@Description", groupMeeting.Description);
                 parameters.Add("@GroupMeetingDate", groupMeeting.GroupMeetingDate);
+                parameters.Add("@RoomID", groupMeeting.RoomID);
                 rowAffected = con.Execute("UpdateGroupMeeting", parameters, commandType: CommandType.StoredProcedure);
             }
 

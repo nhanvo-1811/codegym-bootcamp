@@ -29,5 +29,6 @@ C:\Users\Errors\source\repos\DapperGroupMeeting\DapperGroupMeeting\obj\Debug\net
 C:\Users\Errors\source\repos\DapperGroupMeeting\DapperGroupMeeting\obj\Debug\netcoreapp2.2\DapperGroupMeeting.pdb
 C:\Users\Errors\source\repos\DapperGroupMeeting\DapperGroupMeeting\obj\Debug\netcoreapp2.2\DapperGroupMeeting.csproj.CopyComplete
 C:\Users\Errors\source\repos\DapperGroupMeeting\DapperGroupMeeting\obj\Debug\netcoreapp2.2\Razor\Views\Home\Create.g.cshtml.cs
-C:\Users\Errors\source\repos\DapperGroupMeeting\DapperGroupMeeting\obj\Debug\netcoreapp2.2\Razor\Views\Home\DeleteMeeting.g.cshtml.cs
-C:\Users\Errors\source\repos\DapperGroupMeeting\DapperGroupMeeting\obj\Debug\netcoreapp2.2\Razor\Views\Home\EditMeeting.g.cshtml.cs
+C:\Users\Errors\source\repos\DapperGroupMeeting\DapperGroupMeeting\obj\Debug\netcoreapp2.2\Razor\Views\Home\Delete.g.cshtml.cs
+C:\Users\Errors\source\repos\DapperGroupMeeting\DapperGroupMeeting\obj\Debug\netcoreapp2.2\Razor\Views\Home\Details.g.cshtml.cs
+C:\Users\Errors\source\repos\DapperGroupMeeting\DapperGroupMeeting\obj\Debug\netcoreapp2.2\Razor\Views\Home\Edit.g.cshtml.cs

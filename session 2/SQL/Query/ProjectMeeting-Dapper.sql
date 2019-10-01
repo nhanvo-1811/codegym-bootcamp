@@ -1,82 +1,52 @@
-CREATE DATABASE ProjectMeeting
-USE [ProjectMeeting]  
+CREATE TABLE [dbo].[Users](  
+    [UserId][int] IDENTITY(1, 1) NOT NULL,
+	[UserName][varchar](50) NULL, 
+	[UserMobile][varchar](50) NULL,
+	[UserEmail][varchar](50) NULL, 
+	[FaceBookUrl][varchar](50) NULL,
+	[LinkedInUrl][varchar](50) NULL, [TwitterUrl][varchar](50) NULL,
+	[PersonalWebUrl][varchar](50) NULL, 
+	[IsDeleted][bit] NULL) ON[PRIMARY]  
+GO  
+ALTER TABLE[dbo].[Users] ADD CONSTRAINT[DF_User_IsDeleted] DEFAULT((0)) FOR[IsDeleted]  
 GO
 
-CREATE TABLE [dbo].[GroupMeeting](  
-    [Id] [int] IDENTITY(1,1) NOT NULL,  
-    [ProjectName] [varchar](50) NULL,  
-    [GroupMeetingLeadName] [varchar](50) NULL,  
-    [TeamLeadName] [varchar](50) NULL,  
-    [Description] [varchar](50) NULL,  
-    [GroupMeetingDate] [date] NULL,  
- CONSTRAINT [PK_GroupMeeting-2] PRIMARY KEY CLUSTERED   
-(  
-    [Id] ASC  
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]  
-) ON [PRIMARY]  
-  
-GO  
-  
-SET ANSI_PADDING OFF  
-GO  
-
-Create procedure [dbo].[GetGroupMeetingDetails]    
-AS    
-BEGIN    
-     SELECT * FROM GROUPMEETING    
-END
-
-Create procedure GetGroupMeetingByID 
-(
-@id int
-)   
-AS    
-BEGIN    
-     SELECT * FROM GROUPMEETING WHERE Id = @id   
-END
-
-create procedure [dbo].[InsertGroupMeeting]    
-(    
-    @ProjectName varchar(50),    
-    @GroupMeetingLeadName varchar(50),    
-    @TeamLeadName varchar(50),    
-    @Description varchar(50),    
-    @GroupMeetingDate date    
-)    
-As    
-BEGIN    
-    
- INSERT INTO GroupMeeting(ProjectName,GroupMeetingLeadName,TeamLeadName,Description,GroupMeetingDate)    
- VALUES(@ProjectName,@GroupMeetingLeadName,@TeamLeadName,@Description,@GroupMeetingDate)    
-    
+CREATE PROCEDURE[dbo].[AddUser]  
+@UserName varchar(50),  
+    @UserMobile varchar(50),  
+    @UserEmail varchar(50),  
+    @FaceBookUrl varchar(50),  
+    @LinkedInUrl varchar(50),  
+    @TwitterUrl varchar(50),  
+    @PersonalWebUrl varchar(50)  
+AS  
+BEGIN  
+SET NOCOUNT ON 
+INSERT INTO Users(UserName, UserMobile, UserEmail, FaceBookUrl, LinkedInUrl, TwitterUrl, PersonalWebUrl)  
+values(@UserName, @UserMobile, @UserEmail, @FaceBookUrl, @LinkedInUrl, @TwitterUrl, @PersonalWebUrl)  
 END  
+GO   
 
-create procedure [dbo].[UpdateGroupMeeting]    
-(    
-    @Id int,    
-    @ProjectName varchar(50),    
-    @GroupMeetingLeadName varchar(50),    
-    @TeamLeadName varchar(50),    
-    @Description varchar(50),    
-    @GroupMeetingDate date    
-)    
-As    
-BEGIN    
-     UPDATE GroupMeeting    
-     SET ProjectName =@ProjectName,    
-     GroupMeetingLeadName =@GroupMeetingLeadName,    
-     TeamLeadName = @TeamLeadName,    
-     Description = @Description,    
-     GroupMeetingDate =@GroupMeetingDate    
-     Where Id=@Id    
+CREATE PROCEDURE[dbo].[DeleteUser]  
+@UserId int  
+AS  
+BEGIN  
+SET NOCOUNT ON;  
+update Users set IsDeleted = 1 where UserId = @UserId  
+END  
+ 
+CREATE PROCEDURE[dbo].[GetAllUsers]  
+AS  
+BEGIN  
+SET NOCOUNT ON;  
+select * from Users  
 END   
 
-create procedure [dbo].[DeleteGroupMeeting]    
-(    
-    @Id int     
-)    
-As    
-BEGIN    
-    DELETE FROM GroupMeeting WHERE Id=@Id    
-END   
-
+CREATE PROCEDURE[dbo].[GetUserById]  
+@UserId int  
+AS  
+BEGIN  
+SET NOCOUNT ON;  
+select * from Users where UserId = @UserId;  
+END  
+GO  

@@ -13,46 +13,59 @@ namespace DapperGroupMeeting.Controllers
     public class HomeController : Controller
     {
         private readonly GroupMeetingService groupMeeting = new GroupMeetingService();
+        private readonly RoomService roomService = new RoomService();
+
         public IActionResult Index()
         {
-            var Gmeeting = groupMeeting.GetGroupMeetings();
-            var data = Gmeeting.Select(s => new GroupMeetingView()
-            {
-                Id = s.Id,
-                ProjectName = s.ProjectName,
-                Description = s.Description,
-                GroupMeetingDate = s.GroupMeetingDate.ToString("ddd dd/MM/yyyy"),
-                GLeadName = s.GroupMeetingLeadName,
-                TLeadName = s.TeamLeadName
-            }).ToList();
-            return View(data);
+            var rooms = roomService.GetRooms();
+            var _gmeetings = groupMeeting.GetGroupMeetings().
+                Join(rooms, gr => gr.RoomID, r => r.RoomID,
+                (gr, r) => new GroupMeetingView()
+                //var groupMeetings = groupMeeting.GetGroupMeetings().Select(s => new GroupMeetingView()
+                {
+                    Id = gr.Id,
+                    ProjectName = gr.ProjectName,
+                    GLeadName = gr.GLeadName,
+                    TLeadName = gr.TLeadName,
+                    Description = gr.Description,
+                    GroupMeetingDate = gr.GroupMeetingDate.ToString("ddd dd/MM/yyyy"),
+                    // RoomId = s.RoomId,
+                    // RoomName = rooms.Where(r => r.RoomId == s.RoomId).FirstOrDefault().RoomName
+                    RoomName = r.RoomName
+                }).ToList();
+            IList<GroupMeetingView> gmeetings = _gmeetings;
+            return View(gmeetings);
+            // return View(groupMeeting.GetGroupMeetings().Select(s=>new GroupMeetingView() { GroupMeetingDate = s.GroupMeetingDate.ToString("ddd dd/MM/yyyy")}));
         }
 
         [HttpGet]
         public IActionResult Create()
         {
+            ViewBag.Rooms = GetRooms();
             return View();
         }
 
         [HttpPost]
-        public IActionResult Create(GroupMeetingCreate groupMeetingCreate)
+        public IActionResult Create(GroupMeetingCreate GMCreate)
         {
 
             if (ModelState.IsValid)
             {
-                var GMeeting = new GroupMeeting()
+                var gMeeting = groupMeeting.AddGroupMeeting(new GroupMeeting()
                 {
-                    ProjectName = groupMeetingCreate.ProjectName,
-                    Description = groupMeetingCreate.Description,
-                    GroupMeetingDate = groupMeetingCreate.GroupMeetingDate,
-                    GroupMeetingLeadName = groupMeetingCreate.GLeadName,
-                    TeamLeadName = groupMeetingCreate.TLeadName
-                };
+                    ProjectName = GMCreate.ProjectName,
+                    Description = GMCreate.Description,
+                    GroupMeetingDate = GMCreate.GroupMeetingDate,
+                    GLeadName = GMCreate.GLeadName,
+                    TLeadName = GMCreate.TLeadName,
+                    RoomID = GMCreate.RoomID
+
+                });
                 try
                 {
-                    if (groupMeeting.AddGroupMeeting(GMeeting) > 0)
+                    if (gMeeting > 0)
                     {
-                        TempData["Message"] = groupMeetingCreate.ProjectName + "added successfully.";
+                        TempData["Message"] = GMCreate.ProjectName + "added successfully.";
                     }
                     else
                     {
@@ -64,34 +77,29 @@ namespace DapperGroupMeeting.Controllers
                     TempData["Errors"] = ex.Message;
                 }
             }
+            ModelState.Clear();
+            ViewBag.Rooms = GetRooms();
             return View();
         }
         [HttpGet]
-        public IActionResult EditMeeting(int? id)
+        public IActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return NotFound();
             }
-            GroupMeeting group = groupMeeting.GetGroupMeetingById(id);
-            var groupEdit = new GroupMeetingEdit() 
-            {
-                Id = group.Id,
-                ProjectName = group.ProjectName,
-                Description = group.Description,
-                GroupMeetingDate = group.GroupMeetingDate,
-                GroupMeetingLeadName = group.GroupMeetingLeadName,
-                TeamLeadName = group.TeamLeadName
-            };
-            if (groupEdit == null)
+            var group = groupMeeting.GetGroupMeetingById(id);
+
+            if (group == null)
                 return NotFound();
-            return View(groupEdit);
+            ViewBag.Rooms = GetRooms();
+            return View(group);
         }
 
         [HttpPost]
-        public IActionResult EditMeeting(int id, [Bind] GroupMeetingEdit groupMeting)
+        public IActionResult Edit(int id, [Bind] GroupMeeting groupMeting)
         {
-            
+
             if (id != groupMeting.Id)
                 return NotFound();
 
@@ -100,30 +108,67 @@ namespace DapperGroupMeeting.Controllers
                 groupMeeting.UpdateGroupMeeting(groupMeting);
                 return RedirectToAction("Index");
             }
+            ViewBag.Rooms = GetRooms();
             return View(groupMeting);
         }
 
-
-        public IActionResult DeleteMeeting(int id)
+        public IActionResult Details(int id)
         {
-            GroupMeeting group = groupMeeting.GetGroupMeetingById(id);
+            var group = groupMeeting.GetGroupMeetingById(id);
             if (group == null)
             {
                 return NotFound();
             }
             return View(group);
         }
+
+        public IActionResult Delete(int id)
+        {
+            #region parse sang GroupMeetingView
+            //var rooms = roomService.GetRooms();
+            //var _gmeetings = groupMeeting.GetGroupMeetingById(id);
+            //Join(rooms, gr => gr.RoomID, r => r.RoomID,
+            //(gr, r) => new GroupMeetingView()
+            //{
+            //    Id = gr.Id,
+            //    ProjectName = gr.ProjectName,
+            //    GLeadName = gr.GroupMeetingLeadName,
+            //    TLeadName = gr.TeamLeadName,
+            //    Description = gr.Description,
+            //    GroupMeetingDate = gr.GroupMeetingDate.ToString("ddd dd/MM/yyyy"),
+            //    RoomName = r.RoomName
+            //});
+            #endregion
+            var group = groupMeeting.GetGroupMeetingById(id);
+            if (group == null)
+            {
+                return NotFound();
+            }
+            return View(group);
+        }
+
         [HttpPost]
-        public IActionResult DeleteMeeting(int id, GroupMeeting groupMeting)
+        public IActionResult Delete(int id, GroupMeeting groupMeting)
         {
             if (groupMeeting.DeleteGroupMeeting(id) > 0)
             {
                 return RedirectToAction("Index");
             };
-            return View(groupMeeting);
+            return View(groupMeting);
+        }
+
+        private List<RoomView> GetRooms()
+        {
+            var data = roomService.GetRooms().Select(r => new RoomView
+            {
+                Name = r.RoomName,
+                Value = r.RoomID
+            }).ToList();
+            return data;
         }
 
     }
+
 
 
 }
